@@ -4,6 +4,8 @@
 typedef struct s_philo
 {
 	unsigned int	id;
+	pthread_t		philo;	
+	bool			state;
 }				t_philo;
 
 typedef struct s_global
@@ -13,7 +15,8 @@ typedef struct s_global
 	unsigned int	time_to_think;
 	unsigned int	time_to_sleep;
 	unsigned int	times_must_eat;
-	// struct s_philo	*philosophers;
+	pthread_mutex_t	*forks;
+	struct s_philo	*philosophers;
 
 }				t_global;
 

@@ -1,17 +1,35 @@
 #include "philosophers.h"
 
-void	ft_free(char *arg, char *text, bool	end)
+void	print___(void)
 {
-	if(text)
-		printf("Error : %s\n", text);
-	if(arg)
-		exit(end);
-	/*
-	1 = free s
+	static unsigned int i = -1;
+	printf("S_GLOBAL : \nphilo_nbr = %d\ntime_to_eat = %d\ntime_to_think = %d\ntime_to_sleep = %d\ntime_must_eat = %d\n\n\n", s()->philo_nbr, s()->time_to_eat, s()->time_to_think, s()->time_to_sleep, s()->times_must_eat);
+	while(++i < s()->philo_nbr)
+	{
+		printf("PHILOSOPHERS N.%d\n", i);
+		printf("id = %d\n", s()->philosophers[i].id);
+		printf("state = %d\n\n", s()->philosophers[i].state);
+	}
+	i = -1;
+}
 
+void	__ft_alloc__(t_global	*ph)
+{
+	static size_t	_i = 0;
 
-	*/
-	exit(end);
+	ph->philosophers = malloc(ph->philo_nbr * sizeof(t_philo));
+	if(!ph->philosophers)
+		ft_exit("1", "malloc error", ERROR);
+	ph->forks = malloc(ph->philo_nbr * sizeof(pthread_mutex_t));
+	if(!ph->forks)
+		ft_exit("12", "malloc error", ERROR);
+	while(_i < ph->philo_nbr)
+	{
+		memset(&ph->philosophers[_i], 0, sizeof(t_philo));
+		ph->philosophers[_i].id = _i;
+		ph->philosophers[_i].state = 1;
+		_i++;
+	}
 }
 
 t_global	*s(void)
@@ -23,6 +41,7 @@ t_global	*s(void)
 		s = malloc(sizeof(t_global));
 		if (!s)
 			return (free(s), NULL);
+		memset(s, 0, sizeof(t_global));
 	}
 	return (s);
 }
@@ -32,5 +51,7 @@ int	main(int ac, char **av)
 	if(!s())
 		return (ERROR);
 	ft_parsing(ac, av, s());
-	
+	__ft_alloc__(s());
+	print___();
+	ft_lets_go_eat(s());
 }

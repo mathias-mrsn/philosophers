@@ -1,7 +1,9 @@
 NAME =		philosophers
 
 SRCS = 		srcs/main.c \
-			srcs/parsing/parsing.c
+			srcs/parsing.c \
+			srcs/exit.c \
+			srcs/lets_go_eat.c
 
 OBJS = ${SRCS:.c=.o}
 

@@ -1,19 +1,6 @@
 #include "philosophers.h"
 
-int		ft_keep_going(t_philo *philo)
-{
-	size_t time = ft_get_time();
-
-	if(!s()->stop_program && (size_t)(time - philo->last_meal) < (size_t)(s()->time_to_die))
-	{
-		return (SUCCESS);
-	}
-	
-	ft_status(philo->id, IS_DEAD);
-	return (ERROR);
-}
-
-size_t	ft_get_time()
+size_t	ft_get_time(void)
 {
 	struct timeval time;
 
@@ -25,6 +12,25 @@ void	ft_status(int	id, char *str)
 {
 	printf("[%10lu] : philosopher %d, %s\n", ft_get_time() - s()->start_time, id, str);
 }
+
+int		ft_keep_going(t_philo *philo)
+{
+	size_t time = ft_get_time();
+
+	// printf("time = %lu, last meal = %lu, id = %d\n", time, philo->last_meal, philo->id);
+	if(!s()->stop_program && (size_t)(time - philo->last_meal) < (size_t)(s()->time_to_die))
+	{
+		return (SUCCESS);
+	}
+	
+	ft_status(philo->id, IS_DEAD);
+	s()->stop_program = true;
+	exit(0);
+	return (ERROR);
+}
+
+
+
 
 int		ft_get_fork_left(int id)
 {
@@ -49,17 +55,19 @@ void	ft_take_forks(int id)
 	if(0 == id % 2)
 	{
 		pthread_mutex_lock(&s()->forks[left]);
-		ft_keep_going(id);
-		ft_status(id, FORK_LEFT);
+		// ft_status(id, FORK_LEFT);
 		pthread_mutex_lock(&s()->forks[right]);
-		ft_status(id, FORK_RIGHT);
+		// printf("[%d]{%d}", id - 1, id);
+		if(SUCCESS == ft_keep_going(&s()->philosophers[id - 1]))
+			ft_status(id, FORK_RIGHT);
 	}
 	else
 	{
 		pthread_mutex_lock(&s()->forks[right]);
-		ft_status(id, FORK_RIGHT);
+		// ft_status(id, FORK_RIGHT);
 		pthread_mutex_lock(&s()->forks[left]);
-		ft_status(id, FORK_LEFT);
+		if(SUCCESS == ft_keep_going(&s()->philosophers[id - 1]))
+			ft_status(id, FORK_LEFT);
 	}
 
 }
@@ -90,15 +98,15 @@ void	ft_drop_forks(int id)
 void	ft_is_eating(int id)
 {
 	ft_status(id, IS_EATING);
-	usleep(s()->time_to_eat * 1000);
 	s()->philosophers[id].last_meal = ft_get_time();
+	usleep(s()->time_to_eat * 1000);
 }
 
-void	ft_is_thinking(int id)
-{
-	ft_status(id, IS_THINKING);
-	usleep(100);
-}
+// void	ft_is_thinking(int id)
+// {
+// 	ft_status(id, IS_THINKING);
+// 	usleep(100);
+// }
 
 void	ft_is_sleeping(int id)
 {

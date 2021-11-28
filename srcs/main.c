@@ -27,7 +27,7 @@ void	__ft_alloc__(t_global	*ph)
 	while(_i < ph->philo_nbr)
 	{
 		memset(&ph->philosophers[_i], 0, sizeof(t_philo));
-		ph->philosophers[_i].id = _i;
+		ph->philosophers[_i].id = _i + 1;
 		ph->philosophers[_i].state = 1;
 		_i++;
 	}

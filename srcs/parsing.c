@@ -36,8 +36,8 @@ static unsigned int	__ft_get_arg__(char *arg)
 static bool	__ft_check_arg__(t_global *ph)
 {
 	if(ph->philo_nbr == (unsigned int)INVALID 
+		|| ph->time_to_die == (unsigned int)INVALID 
 		|| ph->time_to_eat == (unsigned int)INVALID 
-		|| ph->time_to_think == (unsigned int)INVALID 
 		|| ph->time_to_sleep == (unsigned int)INVALID 
 		|| ph->times_must_eat == (unsigned int)INVALID)
 		return (ERROR);
@@ -50,8 +50,8 @@ void	ft_parsing(int ac, char **av, t_global *ph)
 	if (ac != 6 && ac != 5)
 		ft_exit("1", "arguments number incorrect", ERROR);
 	ph->philo_nbr = __ft_get_arg__(av[1]);
-	ph->time_to_eat = __ft_get_arg__(av[2]);
-	ph->time_to_think = __ft_get_arg__(av[3]);
+	ph->time_to_die = __ft_get_arg__(av[2]);
+	ph->time_to_eat = __ft_get_arg__(av[3]);
 	ph->time_to_sleep = __ft_get_arg__(av[4]);
 	if (ac == 6)
 		ph->times_must_eat = __ft_get_arg__(av[5]);

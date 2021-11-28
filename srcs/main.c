@@ -3,12 +3,13 @@
 void	print___(void)
 {
 	static unsigned int i = -1;
-	printf("S_GLOBAL : \nphilo_nbr = %d\ntime_to_eat = %d\ntime_to_think = %d\ntime_to_sleep = %d\ntime_must_eat = %d\n\n\n", s()->philo_nbr, s()->time_to_eat, s()->time_to_think, s()->time_to_sleep, s()->times_must_eat);
+	printf("S_GLOBAL : \nphilo_nbr = %d\ntime_to_eat = %d\ntime_to_die = %d\ntime_to_sleep = %d\ntime_must_eat = %d\n\n\n", s()->philo_nbr, s()->time_to_eat, s()->time_to_die, s()->time_to_sleep, s()->times_must_eat);
 	while(++i < s()->philo_nbr)
 	{
 		printf("PHILOSOPHERS N.%d\n", i);
 		printf("id = %d\n", s()->philosophers[i].id);
-		printf("state = %d\n\n", s()->philosophers[i].state);
+		printf("state = %d\n", s()->philosophers[i].state);
+		printf("last_meal = %lu\n\n", s()->philosophers[i].last_meal);
 	}
 	i = -1;
 }

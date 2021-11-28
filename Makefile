@@ -24,6 +24,9 @@ all:		${NAME}
 ${NAME}:	${OBJS}
 			${CC} ${CFLAGS} ${INCS} -lpthread ${OBJS} -o ${NAME}
 
+sanitize:	${OBJS}
+			${CC} ${CFLAGS}  -g3 -fsanitize=address ${INCS} -lpthread ${OBJS} -o ${NAME}
+
 clean:
 			${RM} ${OBJS}
 

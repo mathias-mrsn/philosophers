@@ -7,7 +7,7 @@
 # define ERROR 1
 
 # define IS_EATING "is eating"
-# define FORK_LEFT "took left fork"
+# define FORK_LEFT "took left forks"
 # define FORK_RIGHT "took right fork"
 # define IS_THINKING "is thinking"
 # define IS_SLEEPING "is sleeping"

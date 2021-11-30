@@ -8,7 +8,6 @@ void	print___(void)
 	{
 		printf("PHILOSOPHERS N.%d\n", i);
 		printf("id = %d\n", s()->philosophers[i].id);
-		printf("state = %d\n", s()->philosophers[i].state);
 		printf("last_meal = %lu\n\n", s()->philosophers[i].last_meal);
 	}
 	i = -1;
@@ -16,7 +15,7 @@ void	print___(void)
 
 void	__ft_alloc__(t_global	*ph)
 {
-	static size_t	_i = 0;
+	static size_t	i = 0;
 
 	ph->philosophers = malloc(ph->philo_nbr * sizeof(t_philo));
 	if(!ph->philosophers)
@@ -24,12 +23,11 @@ void	__ft_alloc__(t_global	*ph)
 	ph->forks = malloc(ph->philo_nbr * sizeof(pthread_mutex_t));
 	if(!ph->forks)
 		ft_exit("12", "malloc error", ERROR);
-	while(_i < ph->philo_nbr)
+	while(i < ph->philo_nbr)
 	{
-		memset(&ph->philosophers[_i], 0, sizeof(t_philo));
-		ph->philosophers[_i].id = _i + 1;
-		ph->philosophers[_i].state = 1;
-		_i++;
+		memset(&ph->philosophers[i], 0, sizeof(t_philo));
+		ph->philosophers[i].id = i + 1;
+		i++;
 	}
 }
 

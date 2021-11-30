@@ -20,6 +20,8 @@ typedef struct s_global
 	bool			stop_program;
 	size_t			start_time;
 	pthread_mutex_t	*forks;
+	pthread_mutex_t lock;
+	pthread_t		checker;
 	struct s_philo	*philosophers;
 
 }				t_global;

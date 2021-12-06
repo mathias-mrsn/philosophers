@@ -17,6 +17,7 @@ void	__ft_alloc__(t_global	*ph)
 {
 	static size_t	i = 0;
 
+	ph->stop_program = false;
 	ph->philosophers = malloc(ph->philo_nbr * sizeof(t_philo));
 	if(!ph->philosophers)
 		ft_exit("1", "malloc error", ERROR);
@@ -26,7 +27,7 @@ void	__ft_alloc__(t_global	*ph)
 	while(i < ph->philo_nbr)
 	{
 		memset(&ph->philosophers[i], 0, sizeof(t_philo));
-		ph->philosophers[i].id = i + 1;
+		ph->philosophers[i].id = i;
 		i++;
 	}
 }
@@ -39,7 +40,7 @@ t_global	*s(void)
 	{
 		s = malloc(sizeof(t_global));
 		if (!s)
-			return (free(s), NULL);
+			return (NULL);
 		memset(s, 0, sizeof(t_global));
 	}
 	return (s);

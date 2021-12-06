@@ -1,0 +1,1291 @@
+S_GLOBAL : 
+philo_nbr = 50
+time_to_eat = 200
+time_to_die = 800
+time_to_sleep = 100
+time_must_eat = 0
+
+
+PHILOSOPHERS N.0
+id = 0
+last_meal = 0
+
+PHILOSOPHERS N.1
+id = 1
+last_meal = 0
+
+PHILOSOPHERS N.2
+id = 2
+last_meal = 0
+
+PHILOSOPHERS N.3
+id = 3
+last_meal = 0
+
+PHILOSOPHERS N.4
+id = 4
+last_meal = 0
+
+PHILOSOPHERS N.5
+id = 5
+last_meal = 0
+
+PHILOSOPHERS N.6
+id = 6
+last_meal = 0
+
+PHILOSOPHERS N.7
+id = 7
+last_meal = 0
+
+PHILOSOPHERS N.8
+id = 8
+last_meal = 0
+
+PHILOSOPHERS N.9
+id = 9
+last_meal = 0
+
+PHILOSOPHERS N.10
+id = 10
+last_meal = 0
+
+PHILOSOPHERS N.11
+id = 11
+last_meal = 0
+
+PHILOSOPHERS N.12
+id = 12
+last_meal = 0
+
+PHILOSOPHERS N.13
+id = 13
+last_meal = 0
+
+PHILOSOPHERS N.14
+id = 14
+last_meal = 0
+
+PHILOSOPHERS N.15
+id = 15
+last_meal = 0
+
+PHILOSOPHERS N.16
+id = 16
+last_meal = 0
+
+PHILOSOPHERS N.17
+id = 17
+last_meal = 0
+
+PHILOSOPHERS N.18
+id = 18
+last_meal = 0
+
+PHILOSOPHERS N.19
+id = 19
+last_meal = 0
+
+PHILOSOPHERS N.20
+id = 20
+last_meal = 0
+
+PHILOSOPHERS N.21
+id = 21
+last_meal = 0
+
+PHILOSOPHERS N.22
+id = 22
+last_meal = 0
+
+PHILOSOPHERS N.23
+id = 23
+last_meal = 0
+
+PHILOSOPHERS N.24
+id = 24
+last_meal = 0
+
+PHILOSOPHERS N.25
+id = 25
+last_meal = 0
+
+PHILOSOPHERS N.26
+id = 26
+last_meal = 0
+
+PHILOSOPHERS N.27
+id = 27
+last_meal = 0
+
+PHILOSOPHERS N.28
+id = 28
+last_meal = 0
+
+PHILOSOPHERS N.29
+id = 29
+last_meal = 0
+
+PHILOSOPHERS N.30
+id = 30
+last_meal = 0
+
+PHILOSOPHERS N.31
+id = 31
+last_meal = 0
+
+PHILOSOPHERS N.32
+id = 32
+last_meal = 0
+
+PHILOSOPHERS N.33
+id = 33
+last_meal = 0
+
+PHILOSOPHERS N.34
+id = 34
+last_meal = 0
+
+PHILOSOPHERS N.35
+id = 35
+last_meal = 0
+
+PHILOSOPHERS N.36
+id = 36
+last_meal = 0
+
+PHILOSOPHERS N.37
+id = 37
+last_meal = 0
+
+PHILOSOPHERS N.38
+id = 38
+last_meal = 0
+
+PHILOSOPHERS N.39
+id = 39
+last_meal = 0
+
+PHILOSOPHERS N.40
+id = 40
+last_meal = 0
+
+PHILOSOPHERS N.41
+id = 41
+last_meal = 0
+
+PHILOSOPHERS N.42
+id = 42
+last_meal = 0
+
+PHILOSOPHERS N.43
+id = 43
+last_meal = 0
+
+PHILOSOPHERS N.44
+id = 44
+last_meal = 0
+
+PHILOSOPHERS N.45
+id = 45
+last_meal = 0
+
+PHILOSOPHERS N.46
+id = 46
+last_meal = 0
+
+PHILOSOPHERS N.47
+id = 47
+last_meal = 0
+
+PHILOSOPHERS N.48
+id = 48
+last_meal = 0
+
+PHILOSOPHERS N.49
+id = 49
+last_meal = 0
+
+commun meal = 1638808611360
+[         1] : philosopher 2, took left forks
+[         1] : philosopher 2, took right fork
+[         1] : philosopher 2, is eating
+[         1] : philosopher 3, took right fork
+[         1] : philosopher 5, took right fork
+[         1] : philosopher 5, took left forks
+[         1] : philosopher 5, is eating
+[         1] : philosopher 7, took right fork
+[         1] : philosopher 7, took left forks
+[         1] : philosopher 7, is eating
+[         1] : philosopher 0, took left forks
+[         1] : philosopher 0, took right fork
+[         1] : philosopher 0, is eating
+[         1] : philosopher 9, took right fork
+[         1] : philosopher 9, took left forks
+[         1] : philosopher 9, is eating
+[         1] : philosopher 11, took right fork
+[         1] : philosopher 11, took left forks
+[         1] : philosopher 11, is eating
+[         1] : philosopher 13, took right fork
+[         1] : philosopher 13, took left forks
+[         1] : philosopher 13, is eating
+[         1] : philosopher 15, took right fork
+[         1] : philosopher 15, took left forks
+[         1] : philosopher 15, is eating
+[         1] : philosopher 17, took right fork
+[         1] : philosopher 17, took left forks
+[         1] : philosopher 17, is eating
+[         1] : philosopher 19, took right fork
+[         1] : philosopher 19, took left forks
+[         1] : philosopher 19, is eating
+[         1] : philosopher 21, took right fork
+[         1] : philosopher 21, took left forks
+[         1] : philosopher 21, is eating
+[         1] : philosopher 23, took right fork
+[         1] : philosopher 23, took left forks
+[         1] : philosopher 23, is eating
+[         1] : philosopher 25, took right fork
+[         1] : philosopher 25, took left forks
+[         1] : philosopher 25, is eating
+[         1] : philosopher 27, took right fork
+[         1] : philosopher 27, took left forks
+[         1] : philosopher 27, is eating
+[         1] : philosopher 29, took right fork
+[         1] : philosopher 29, took left forks
+[         1] : philosopher 33, took right fork
+[         1] : philosopher 33, took left forks
+[         1] : philosopher 33, is eating
+[         1] : philosopher 29, is eating
+[         1] : philosopher 31, took right fork
+[         1] : philosopher 31, took left forks
+[         1] : philosopher 31, is eating
+[         1] : philosopher 35, took right fork
+[         1] : philosopher 35, took left forks
+[         1] : philosopher 35, is eating
+[         1] : philosopher 37, took right fork
+[         1] : philosopher 37, took left forks
+[         1] : philosopher 37, is eating
+[         1] : philosopher 39, took right fork
+[         1] : philosopher 39, took left forks
+[         1] : philosopher 39, is eating
+[         1] : philosopher 41, took right fork
+[         1] : philosopher 41, took left forks
+[         1] : philosopher 41, is eating
+[         1] : philosopher 43, took right fork
+[         1] : philosopher 43, took left forks
+[         1] : philosopher 43, is eating
+[         1] : philosopher 45, took right fork
+[         1] : philosopher 45, took left forks
+[         1] : philosopher 45, is eating
+[         1] : philosopher 47, took right fork
+[         1] : philosopher 47, took left forks
+[         1] : philosopher 47, is eating
+[       201] : philosopher 47, drop right
+[       201] : philosopher 17, drop right
+[       201] : philosopher 17, drop left
+[       201] : philosopher 19, drop right
+[       201] : philosopher 9, drop right
+[       201] : philosopher 41, drop right
+[       201] : philosopher 23, drop right
+[       201] : philosopher 23, drop left
+[       201] : philosopher 2, drop left
+[       201] : philosopher 27, drop right
+[       201] : philosopher 0, drop left
+[       201] : philosopher 0, drop right
+[       201] : philosopher 25, drop right
+[       201] : philosopher 25, drop left
+[       201] : philosopher 45, drop right
+[       201] : philosopher 45, drop left
+[       201] : philosopher 45, is sleeping
+[       201] : philosopher 18, took left forks
+[       201] : philosopher 18, took right fork
+[       201] : philosopher 39, drop right
+[       201] : philosopher 18, is eating
+[       201] : philosopher 34, took left forks
+[       201] : philosopher 10, took left forks
+[       201] : philosopher 36, took left forks
+[       201] : philosopher 6, took left forks
+[       201] : philosopher 29, drop right
+[       201] : philosopher 29, drop left
+[       201] : philosopher 1, took right fork
+[       201] : philosopher 29, is sleeping
+[       201] : philosopher 1, took left forks
+[       201] : philosopher 14, took left forks
+[       201] : philosopher 3, took left forks
+[       201] : philosopher 3, is eating
+[       201] : philosopher 22, took left forks
+[       201] : philosopher 26, took left forks
+[       201] : philosopher 26, took right fork
+[       201] : philosopher 41, drop left
+[       201] : philosopher 46, took left forks
+[       201] : philosopher 12, took left forks
+[       201] : philosopher 23, is sleeping
+[       201] : philosopher 44, took left forks
+[       201] : philosopher 21, drop right
+[       201] : philosopher 44, took right fork
+[       201] : philosopher 0, is sleeping
+[       201] : philosopher 44, is eating
+[       201] : philosopher 37, drop right
+[       201] : philosopher 11, drop right
+[       201] : philosopher 37, drop left
+[       201] : philosopher 37, is sleeping
+[       201] : philosopher 11, drop left
+[       201] : philosopher 11, is sleeping
+[       201] : philosopher 40, took left forks
+[       201] : philosopher 40, took right fork
+[       201] : philosopher 20, took left forks
+[       201] : philosopher 47, drop left
+[       201] : philosopher 47, is sleeping
+[       201] : philosopher 42, took left forks
+[       201] : philosopher 24, took left forks
+[       201] : philosopher 24, took right fork
+[       201] : philosopher 24, is eating
+[       201] : philosopher 1, is eating
+[       201] : philosopher 35, drop right
+[       201] : philosopher 49, took right fork
+[       201] : philosopher 35, drop left
+[       201] : philosopher 35, is sleeping
+[       201] : philosopher 17, is sleeping
+[       201] : philosopher 19, drop left
+[       201] : philosopher 19, is sleeping
+[       201] : philosopher 5, drop right
+[       201] : philosopher 5, drop left
+[       201] : philosopher 5, is sleeping
+[       201] : philosopher 22, took right fork
+[       201] : philosopher 15, drop right
+[       201] : philosopher 22, is eating
+[       201] : philosopher 32, took left forks
+[       201] : philosopher 36, took right fork
+[       201] : philosopher 14, took right fork
+[       201] : philosopher 38, took left forks
+[       201] : philosopher 14, is eating
+[       201] : philosopher 38, took right fork
+[       201] : philosopher 10, took right fork
+[       201] : philosopher 38, is eating
+[       201] : philosopher 10, is eating
+[       201] : philosopher 46, took right fork
+[       201] : philosopher 2, drop right
+[       201] : philosopher 46, is eating
+[       201] : philosopher 2, is sleeping
+[       201] : philosopher 21, drop left
+[       201] : philosopher 25, is sleeping
+[       201] : philosopher 30, took left forks
+[       201] : philosopher 39, drop left
+[       201] : philosopher 40, is eating
+[       201] : philosopher 39, is sleeping
+[       201] : philosopher 7, drop right
+[       201] : philosopher 33, drop right
+[       201] : philosopher 15, drop left
+[       201] : philosopher 33, drop left
+[       201] : philosopher 15, is sleeping
+[       201] : philosopher 33, is sleeping
+[       201] : philosopher 6, took right fork
+[       201] : philosopher 32, took right fork
+[       201] : philosopher 36, is eating
+[       201] : philosopher 32, is eating
+[       201] : philosopher 27, drop left
+[       201] : philosopher 21, is sleeping
+[       201] : philosopher 27, is sleeping
+[       201] : philosopher 8, took left forks
+[       201] : philosopher 20, took right fork
+[       201] : philosopher 8, took right fork
+[       201] : philosopher 20, is eating
+[       201] : philosopher 8, is eating
+[       201] : philosopher 7, drop left
+[       201] : philosopher 7, is sleeping
+[       201] : philosopher 9, drop left
+[       201] : philosopher 49, took left forks
+[       201] : philosopher 6, is eating
+[       201] : philosopher 49, is eating
+[       201] : philosopher 13, drop right
+[       201] : philosopher 43, drop right
+[       201] : philosopher 48, took left forks
+[       201] : philosopher 43, drop left
+[       201] : philosopher 16, took left forks
+[       201] : philosopher 16, took right fork
+[       201] : philosopher 26, is eating
+[       201] : philosopher 12, took right fork
+[       201] : philosopher 12, is eating
+[       201] : philosopher 31, drop right
+[       201] : philosopher 41, is sleeping
+[       201] : philosopher 31, drop left
+[       201] : philosopher 31, is sleeping
+[       201] : philosopher 34, took right fork
+[       201] : philosopher 34, is eating
+[       201] : philosopher 42, took right fork
+[       201] : philosopher 42, is eating
+[       201] : philosopher 13, drop left
+[       201] : philosopher 43, is sleeping
+[       201] : philosopher 13, is sleeping
+[       201] : philosopher 9, is sleeping
+[       201] : philosopher 30, took right fork
+[       201] : philosopher 30, is eating
+[       201] : philosopher 16, is eating
+[       201] : philosopher 28, took left forks
+[       201] : philosopher 28, took right fork
+[       201] : philosopher 28, is eating
+[       301] : philosopher 27, is thinking
+[       301] : philosopher 9, is thinking
+[       301] : philosopher 47, is thinking
+[       301] : philosopher 29, is thinking
+[       301] : philosopher 41, is thinking
+[       301] : philosopher 19, is thinking
+[       301] : philosopher 7, is thinking
+[       301] : philosopher 15, is thinking
+[       301] : philosopher 2, is thinking
+[       301] : philosopher 0, is thinking
+[       301] : philosopher 45, is thinking
+[       301] : philosopher 13, is thinking
+[       301] : philosopher 11, is thinking
+[       301] : philosopher 31, is thinking
+[       301] : philosopher 33, is thinking
+[       301] : philosopher 35, is thinking
+[       301] : philosopher 39, is thinking
+[       301] : philosopher 21, is thinking
+[       301] : philosopher 25, is thinking
+[       301] : philosopher 23, is thinking
+[       301] : philosopher 43, is thinking
+[       301] : philosopher 5, is thinking
+[       301] : philosopher 37, is thinking
+[       301] : philosopher 17, is thinking
+[       401] : philosopher 36, drop left
+[       401] : philosopher 36, drop right
+[       401] : philosopher 3, drop right
+[       401] : philosopher 3, drop left
+[       401] : philosopher 6, drop left
+[       401] : philosopher 46, drop left
+[       401] : philosopher 38, drop left
+[       401] : philosopher 44, drop left
+[       401] : philosopher 24, drop left
+[       401] : philosopher 24, drop right
+[       401] : philosopher 42, drop left
+[       401] : philosopher 8, drop left
+[       401] : philosopher 42, drop right
+[       401] : philosopher 8, drop right
+[       401] : philosopher 42, is sleeping
+[       401] : philosopher 32, drop left
+[       401] : philosopher 28, drop left
+[       401] : philosopher 16, drop left
+[       401] : philosopher 30, drop left
+[       401] : philosopher 35, took right fork
+[       401] : philosopher 11, took right fork
+[       401] : philosopher 19, took right fork
+[       401] : philosopher 4, took left forks
+[       401] : philosopher 13, took right fork
+[       401] : philosopher 4, took right fork
+[       401] : philosopher 5, took right fork
+[       401] : philosopher 4, is eating
+[       401] : philosopher 45, took right fork
+[       401] : philosopher 2, took left forks
+[       401] : philosopher 37, took right fork
+[       401] : philosopher 2, took right fork
+[       401] : philosopher 43, took right fork
+[       401] : philosopher 2, is eating
+[       401] : philosopher 43, took left forks
+[       401] : philosopher 43, is eating
+[       401] : philosopher 23, took right fork
+[       401] : philosopher 0, took left forks
+[       401] : philosopher 41, took right fork
+[       401] : philosopher 17, took right fork
+[       401] : philosopher 17, took left forks
+[       401] : philosopher 49, drop right
+[       401] : philosopher 24, is sleeping
+[       401] : philosopher 49, drop left
+[       401] : philosopher 25, took right fork
+[       401] : philosopher 49, is sleeping
+[       401] : philosopher 25, took left forks
+[       401] : philosopher 25, is eating
+[       401] : philosopher 29, took right fork
+[       401] : philosopher 29, took left forks
+[       401] : philosopher 26, drop left
+[       401] : philosopher 26, drop right
+[       401] : philosopher 40, drop left
+[       401] : philosopher 21, took right fork
+[       401] : philosopher 20, drop left
+[       401] : philosopher 36, is sleeping
+[       401] : philosopher 45, took left forks
+[       401] : philosopher 20, drop right
+[       401] : philosopher 45, is eating
+[       401] : philosopher 10, drop left
+[       401] : philosopher 14, drop left
+[       401] : philosopher 14, drop right
+[       401] : philosopher 10, drop right
+[       401] : philosopher 14, is sleeping
+[       401] : philosopher 10, is sleeping
+[       401] : philosopher 3, is sleeping
+[       401] : philosopher 33, took right fork
+[       401] : philosopher 46, drop right
+[       401] : philosopher 48, took right fork
+[       401] : philosopher 38, drop right
+[       401] : philosopher 48, is eating
+[       401] : philosopher 38, is sleeping
+[       401] : philosopher 31, took right fork
+[       401] : philosopher 31, took left forks
+[       401] : philosopher 31, is eating
+[       401] : philosopher 34, drop left
+[       401] : philosopher 18, drop left
+[       401] : philosopher 15, took right fork
+[       401] : philosopher 8, is sleeping
+[       401] : philosopher 15, took left forks
+[       401] : philosopher 15, is eating
+[       401] : philosopher 32, drop right
+[       401] : philosopher 41, took left forks
+[       401] : philosopher 32, is sleeping
+[       401] : philosopher 28, drop right
+[       401] : philosopher 26, is sleeping
+[       401] : philosopher 21, took left forks
+[       401] : philosopher 21, is eating
+[       401] : philosopher 28, is sleeping
+[       401] : philosopher 30, drop right
+[       401] : philosopher 30, is sleeping
+[       401] : philosopher 9, took right fork
+[       401] : philosopher 9, took left forks
+[       401] : philosopher 9, is eating
+[       401] : philosopher 12, drop left
+[       401] : philosopher 37, took left forks
+[       401] : philosopher 37, is eating
+[       401] : philosopher 6, drop right
+[       401] : philosopher 1, drop right
+[       401] : philosopher 6, is sleeping
+[       401] : philosopher 1, drop left
+[       401] : philosopher 1, is sleeping
+[       401] : philosopher 7, took right fork
+[       401] : philosopher 17, is eating
+[       401] : philosopher 35, took left forks
+[       401] : philosopher 35, is eating
+[       401] : philosopher 19, took left forks
+[       401] : philosopher 34, drop right
+[       401] : philosopher 34, is sleeping
+[       401] : philosopher 18, drop right
+[       401] : philosopher 16, drop right
+[       401] : philosopher 18, is sleeping
+[       401] : philosopher 16, is sleeping
+[       401] : philosopher 22, drop left
+[       401] : philosopher 20, is sleeping
+[       401] : philosopher 22, drop right
+[       401] : philosopher 23, took left forks
+[       401] : philosopher 12, drop right
+[       401] : philosopher 23, is eating
+[       401] : philosopher 12, is sleeping
+[       401] : philosopher 13, took left forks
+[       401] : philosopher 13, is eating
+[       401] : philosopher 33, took left forks
+[       401] : philosopher 33, is eating
+[       401] : philosopher 7, took left forks
+[       401] : philosopher 7, is eating
+[       401] : philosopher 39, took right fork
+[       401] : philosopher 39, took left forks
+[       401] : philosopher 39, is eating
+[       401] : philosopher 11, took left forks
+[       401] : philosopher 11, is eating
+[       401] : philosopher 46, is sleeping
+[       401] : philosopher 0, took right fork
+[       401] : philosopher 0, is eating
+[       401] : philosopher 41, is eating
+[       401] : philosopher 19, is eating
+[       401] : philosopher 29, is eating
+[       401] : philosopher 44, drop right
+[       401] : philosopher 44, is sleeping
+[       401] : philosopher 40, drop right
+[       401] : philosopher 40, is sleeping
+[       401] : philosopher 22, is sleeping
+[       401] : philosopher 27, took right fork
+[       401] : philosopher 27, took left forks
+[       401] : philosopher 27, is eating
+[       501] : philosopher 14, is thinking
+[       501] : philosopher 10, is thinking
+[       501] : philosopher 8, is thinking
+[       501] : philosopher 38, is thinking
+[       501] : philosopher 24, is thinking
+[       501] : philosopher 36, is thinking
+[       501] : philosopher 32, is thinking
+[       501] : philosopher 49, is thinking
+[       501] : philosopher 26, is thinking
+[       501] : philosopher 42, is thinking
+[       501] : philosopher 3, is thinking
+[       501] : philosopher 16, is thinking
+[       501] : philosopher 46, is thinking
+[       501] : philosopher 28, is thinking
+[       501] : philosopher 22, is thinking
+[       501] : philosopher 30, is thinking
+[       501] : philosopher 18, is thinking
+[       501] : philosopher 1, is thinking
+[       501] : philosopher 20, is thinking
+[       501] : philosopher 6, is thinking
+[       501] : philosopher 12, is thinking
+[       501] : philosopher 44, is thinking
+[       501] : philosopher 40, is thinking
+[       501] : philosopher 34, is thinking
+[       601] : philosopher 37, drop right
+[       601] : philosopher 37, drop left
+[       601] : philosopher 37, is sleeping
+[       601] : philosopher 15, drop right
+[       601] : philosopher 2, drop left
+[       601] : philosopher 15, drop left
+[       601] : philosopher 25, drop right
+[       601] : philosopher 29, drop right
+[       601] : philosopher 27, drop right
+[       601] : philosopher 43, drop right
+[       601] : philosopher 43, drop left
+[       601] : philosopher 0, drop left
+[       601] : philosopher 0, drop right
+[       601] : philosopher 46, took left forks
+[       601] : philosopher 0, is sleeping
+[       601] : philosopher 46, took right fork
+[       601] : philosopher 27, drop left
+[       601] : philosopher 27, is sleeping
+[       601] : philosopher 23, drop right
+[       601] : philosopher 23, drop left
+[       601] : philosopher 23, is sleeping
+[       601] : philosopher 7, drop right
+[       601] : philosopher 7, drop left
+[       601] : philosopher 7, is sleeping
+[       601] : philosopher 17, drop right
+[       601] : philosopher 45, drop right
+[       601] : philosopher 45, drop left
+[       601] : philosopher 40, took left forks
+[       601] : philosopher 47, took right fork
+[       601] : philosopher 32, took left forks
+[       601] : philosopher 48, drop left
+[       601] : philosopher 48, drop right
+[       601] : philosopher 48, is sleeping
+[       601] : philosopher 36, took left forks
+[       601] : philosopher 36, took right fork
+[       601] : philosopher 36, is eating
+[       601] : philosopher 13, drop right
+[       601] : philosopher 26, took left forks
+[       601] : philosopher 13, drop left
+[       601] : philosopher 26, took right fork
+[       601] : philosopher 13, is sleeping
+[       601] : philosopher 26, is eating
+[       601] : philosopher 2, drop right
+[       601] : philosopher 4, drop left
+[       601] : philosopher 2, is sleeping
+[       601] : philosopher 4, drop right
+[       601] : philosopher 15, is sleeping
+[       601] : philosopher 24, took left forks
+[       601] : philosopher 24, took right fork
+[       601] : philosopher 10, took left forks
+[       601] : philosopher 24, is eating
+[       601] : philosopher 41, drop right
+[       601] : philosopher 20, took left forks
+[       601] : philosopher 41, drop left
+[       601] : philosopher 8, took left forks
+[       601] : philosopher 34, took left forks
+[       601] : philosopher 46, is eating
+[       601] : philosopher 21, drop right
+[       601] : philosopher 43, is sleeping
+[       601] : philosopher 21, drop left
+[       601] : philosopher 11, drop right
+[       601] : philosopher 19, drop right
+[       601] : philosopher 20, took right fork
+[       601] : philosopher 10, took right fork
+[       601] : philosopher 17, drop left
+[       601] : philosopher 17, is sleeping
+[       601] : philosopher 16, took left forks
+[       601] : philosopher 16, took right fork
+[       601] : philosopher 14, took left forks
+[       601] : philosopher 14, took right fork
+[       601] : philosopher 14, is eating
+[       601] : philosopher 35, drop right
+[       601] : philosopher 30, took left forks
+[       601] : philosopher 35, drop left
+[       601] : philosopher 42, took left forks
+[       601] : philosopher 4, is sleeping
+[       601] : philosopher 34, took right fork
+[       601] : philosopher 34, is eating
+[       601] : philosopher 29, drop left
+[       601] : philosopher 49, took right fork
+[       601] : philosopher 49, took left forks
+[       601] : philosopher 49, is eating
+[       601] : philosopher 41, is sleeping
+[       601] : philosopher 18, took left forks
+[       601] : philosopher 9, drop right
+[       601] : philosopher 33, drop right
+[       601] : philosopher 9, drop left
+[       601] : philosopher 11, drop left
+[       601] : philosopher 33, drop left
+[       601] : philosopher 11, is sleeping
+[       601] : philosopher 33, is sleeping
+[       601] : philosopher 20, is eating
+[       601] : philosopher 32, took right fork
+[       601] : philosopher 10, is eating
+[       601] : philosopher 32, is eating
+[       601] : philosopher 39, drop right
+[       601] : philosopher 39, drop left
+[       601] : philosopher 31, drop right
+[       601] : philosopher 16, is eating
+[       601] : philosopher 3, took right fork
+[       601] : philosopher 3, took left forks
+[       601] : philosopher 42, took right fork
+[       601] : philosopher 3, is eating
+[       601] : philosopher 44, took left forks
+[       601] : philosopher 44, took right fork
+[       601] : philosopher 25, drop left
+[       601] : philosopher 5, took left forks
+[       601] : philosopher 5, is eating
+[       601] : philosopher 8, took right fork
+[       601] : philosopher 8, is eating
+[       601] : philosopher 45, is sleeping
+[       601] : philosopher 1, took right fork
+[       601] : philosopher 1, took left forks
+[       601] : philosopher 1, is eating
+[       601] : philosopher 31, drop left
+[       601] : philosopher 31, is sleeping
+[       601] : philosopher 42, is eating
+[       601] : philosopher 44, is eating
+[       601] : philosopher 25, is sleeping
+[       601] : philosopher 29, is sleeping
+[       601] : philosopher 22, took left forks
+[       601] : philosopher 22, took right fork
+[       601] : philosopher 22, is eating
+[       601] : philosopher 40, took right fork
+[       601] : philosopher 18, took right fork
+[       601] : philosopher 40, is eating
+[       601] : philosopher 18, is eating
+[       601] : philosopher 9, is sleeping
+[       601] : philosopher 21, is sleeping
+[       601] : philosopher 19, drop left
+[       601] : philosopher 39, is sleeping
+[       601] : philosopher 19, is sleeping
+[       601] : philosopher 28, took left forks
+[       601] : philosopher 28, took right fork
+[       601] : philosopher 28, is eating
+[       601] : philosopher 38, took left forks
+[       601] : philosopher 30, took right fork
+[       601] : philosopher 38, took right fork
+[       601] : philosopher 30, is eating
+[       601] : philosopher 38, is eating
+[       601] : philosopher 12, took left forks
+[       601] : philosopher 12, took right fork
+[       601] : philosopher 12, is eating
+[       601] : philosopher 35, is sleeping
+[       701] : philosopher 7, is thinking
+[       701] : philosopher 27, is thinking
+[       701] : philosopher 37, is thinking
+[       701] : philosopher 2, is thinking
+[       701] : philosopher 4, is thinking
+[       701] : philosopher 15, is thinking
+[       701] : philosopher 11, is thinking
+[       701] : philosopher 43, is thinking
+[       701] : philosopher 39, is thinking
+[       701] : philosopher 31, is thinking
+[       701] : philosopher 17, is thinking
+[       701] : philosopher 9, is thinking
+[       701] : philosopher 21, is thinking
+[       701] : philosopher 41, is thinking
+[       701] : philosopher 19, is thinking
+[       701] : philosopher 45, is thinking
+[       701] : philosopher 0, is thinking
+[       701] : philosopher 35, is thinking
+[       701] : philosopher 29, is thinking
+[       701] : philosopher 33, is thinking
+[       701] : philosopher 48, is thinking
+[       701] : philosopher 13, is thinking
+[       701] : philosopher 25, is thinking
+[       701] : philosopher 23, is thinking
+[       801] : philosopher 12, drop left
+[       801] : philosopher 12, drop right
+[       801] : philosopher 32, drop left
+[       801] : philosopher 32, drop right
+[       801] : philosopher 24, drop left
+[       801] : philosopher 24, drop right
+[       801] : philosopher 40, drop left
+[       801] : philosopher 40, drop right
+[       801] : philosopher 16, drop left
+[       801] : philosopher 16, drop right
+[       801] : philosopher 44, drop left
+[       801] : philosopher 49, drop right
+[       801] : philosopher 44, drop right
+[       801] : philosopher 20, drop left
+[       801] : philosopher 20, drop right
+[       801] : philosopher 14, drop left
+[       801] : philosopher 38, drop left
+[       801] : philosopher 14, drop right
+[       801] : philosopher 38, drop right
+[       801] : philosopher 14, is sleeping
+[       801] : philosopher 38, is sleeping
+[       801] : philosopher 9, took right fork
+[       801] : philosopher 31, took right fork
+[       801] : philosopher 34, drop left
+[       801] : philosopher 34, drop right
+[       801] : philosopher 6, took left forks
+[       801] : philosopher 12, is sleeping
+[       801] : philosopher 2, took left forks
+[       801] : philosopher 35, took right fork
+[       801] : philosopher 35, took left forks
+[       801] : philosopher 35, is eating
+[       801] : philosopher 7, took right fork
+[       801] : philosopher 43, took right fork
+[       801] : philosopher 45, took right fork
+[       801] : philosopher 45, took left forks
+[       801] : philosopher 45, is eating
+[       801] : philosopher 3, drop right
+[       801] : philosopher 41, took right fork
+[       801] : philosopher 2, took right fork
+[       801] : philosopher 15, took right fork
+[       801] : philosopher 2, is eating
+[       801] : philosopher 15, took left forks
+[       801] : philosopher 36, drop left
+[       801] : philosopher 0, took left forks
+[       801] : philosopher 1, drop right
+[       801] : philosopher 17, took right fork
+[       801] : philosopher 17, took left forks
+[       801] : philosopher 0, took right fork
+[       801] : philosopher 8, drop left
+[       801] : philosopher 0, is eating
+[       801] : philosopher 40, is sleeping
+[       801] : philosopher 25, took right fork
+[       801] : philosopher 9, took left forks
+[       801] : philosopher 46, drop left
+[       801] : philosopher 9, is eating
+[       801] : philosopher 49, drop left
+[       801] : philosopher 46, drop right
+[       801] : philosopher 49, is sleeping
+[       801] : philosopher 46, is sleeping
+[       801] : philosopher 47, took left forks
+[       801] : philosopher 11, took right fork
+[       801] : philosopher 30, drop left
+[       801] : philosopher 4, took left forks
+[       801] : philosopher 30, drop right
+[       801] : philosopher 31, took left forks
+[       801] : philosopher 10, drop left
+[       801] : philosopher 22, drop left
+[       801] : philosopher 11, took left forks
+[       801] : philosopher 22, drop right
+[       801] : philosopher 11, is eating
+[       801] : philosopher 22, is sleeping
+[       801] : philosopher 6, took right fork
+[       801] : philosopher 41, took left forks
+[       801] : philosopher 41, is eating
+[       801] : philosopher 5, drop right
+[       801] : philosopher 36, drop right
+[       801] : philosopher 4, took right fork
+[       801] : philosopher 4, is eating
+[       801] : philosopher 42, drop left
+[       801] : philosopher 1, drop left
+[       801] : philosopher 42, drop right
+[       801] : philosopher 42, is sleeping
+[       801] : philosopher 13, took right fork
+[       801] : philosopher 16, is sleeping
+[       801] : philosopher 13, took left forks
+[       801] : philosopher 13, is eating
+[       801] : philosopher 18, drop left
+[       801] : philosopher 18, drop right
+[       801] : philosopher 26, drop left
+[       801] : philosopher 26, drop right
+[       801] : philosopher 26, is sleeping
+[       801] : philosopher 47, is eating
+[       801] : philosopher 21, took right fork
+[       801] : philosopher 21, took left forks
+[       801] : philosopher 33, took right fork
+[       801] : philosopher 21, is eating
+[       801] : philosopher 27, took right fork
+[       801] : philosopher 27, took left forks
+[       801] : philosopher 31, is eating
+[       801] : philosopher 27, is eating
+[       801] : philosopher 34, is sleeping
+[       801] : philosopher 39, took right fork
+[       801] : philosopher 39, took left forks
+[       801] : philosopher 39, is eating
+[       801] : philosopher 24, is sleeping
+[       801] : philosopher 5, drop left
+[       801] : philosopher 5, is sleeping
+[       801] : philosopher 17, is eating
+[       801] : philosopher 8, drop right
+[       801] : philosopher 8, is sleeping
+[       801] : philosopher 43, took left forks
+[       801] : philosopher 43, is eating
+[       801] : philosopher 44, is sleeping
+[       801] : philosopher 29, took right fork
+[       801] : philosopher 30, is sleeping
+[       801] : philosopher 33, took left forks
+[       801] : philosopher 33, is eating
+[       801] : philosopher 10, drop right
+[       801] : philosopher 10, is sleeping
+[       801] : philosopher 28, drop left
+[       801] : philosopher 6, is eating
+[       801] : philosopher 28, drop right
+[       801] : philosopher 28, is sleeping
+[       801] : philosopher 29, took left forks
+[       801] : philosopher 1, is sleeping
+[       801] : philosopher 29, is eating
+[       801] : philosopher 25, took left forks
+[       801] : philosopher 18, is sleeping
+[       801] : philosopher 25, is eating
+[       801] : philosopher 15, is eating
+[       801] : philosopher 36, is sleeping
+[       801] : philosopher 19, took right fork
+[       801] : philosopher 20, is sleeping
+[       801] : philosopher 19, took left forks
+[       801] : philosopher 19, is eating
+[       801] : philosopher 3, drop left
+[       801] : philosopher 3, is sleeping
+[       801] : philosopher 23, took right fork
+[       801] : philosopher 23, took left forks
+[       801] : philosopher 23, is eating
+[       801] : philosopher 37, took right fork
+[       801] : philosopher 37, took left forks
+[       801] : philosopher 32, is sleeping
+[       801] : philosopher 37, is eating
+[       901] : philosopher 49, is thinking
+[       901] : philosopher 1, is thinking
+[       901] : philosopher 40, is thinking
+[       901] : philosopher 14, is thinking
+[       901] : philosopher 18, is thinking
+[       901] : philosopher 12, is thinking
+[       901] : philosopher 46, is thinking
+[       901] : philosopher 5, is thinking
+[       901] : philosopher 22, is thinking
+[       901] : philosopher 20, is thinking
+[       901] : philosopher 44, is thinking
+[       901] : philosopher 30, is thinking
+[       901] : philosopher 24, is thinking
+[       901] : philosopher 36, is thinking
+[       901] : philosopher 28, is thinking
+[       901] : philosopher 8, is thinking
+[       901] : philosopher 16, is thinking
+[       901] : philosopher 3, is thinking
+[       901] : philosopher 26, is thinking
+[       901] : philosopher 38, is thinking
+[       901] : philosopher 32, is thinking
+[       901] : philosopher 42, is thinking
+[       901] : philosopher 10, is thinking
+[       901] : philosopher 34, is thinking
+[      1001] : philosopher 2, drop left
+[      1001] : philosopher 2, drop right
+[      1001] : philosopher 2, is sleeping
+[      1001] : philosopher 11, drop right
+[      1001] : philosopher 11, drop left
+[      1001] : philosopher 21, drop right
+[      1001] : philosopher 21, drop left
+[      1001] : philosopher 41, drop right
+[      1001] : philosopher 15, drop right
+[      1001] : philosopher 41, drop left
+[      1001] : philosopher 41, is sleeping
+[      1001] : philosopher 15, drop left
+[      1001] : philosopher 15, is sleeping
+[      1001] : philosopher 31, drop right
+[      1001] : philosopher 33, drop right
+[      1001] : philosopher 39, drop right
+[      1001] : philosopher 33, drop left
+[      1001] : philosopher 33, is sleeping
+[      1001] : philosopher 39, drop left
+[      1001] : philosopher 39, is sleeping
+[      1001] : philosopher 17, drop right
+[      1001] : philosopher 9, drop right
+[      1001] : philosopher 17, drop left
+[      1001] : philosopher 17, is sleeping
+[      1001] : philosopher 13, drop right
+[      1001] : philosopher 45, drop right
+[      1001] : philosopher 29, drop right
+[      1001] : philosopher 45, drop left
+[      1001] : philosopher 45, is sleeping
+[      1001] : philosopher 29, drop left
+[      1001] : philosopher 29, is sleeping
+[      1001] : philosopher 43, drop right
+[      1001] : philosopher 1, took right fork
+[      1001] : philosopher 12, took left forks
+[      1001] : philosopher 3, took right fork
+[      1001] : philosopher 3, took left forks
+[      1001] : philosopher 0, drop left
+[      1001] : philosopher 3, is eating
+[      1001] : philosopher 42, took left forks
+[      1001] : philosopher 0, drop right
+[      1001] : philosopher 42, took right fork
+[      1001] : philosopher 16, took left forks
+[      1001] : philosopher 20, took left forks
+[      1001] : philosopher 20, took right fork
+[      1001] : philosopher 40, took left forks
+[      1001] : philosopher 40, took right fork
+[      1001] : philosopher 31, drop left
+[      1001] : philosopher 31, is sleeping
+[      1001] : philosopher 38, took left forks
+[      1001] : philosopher 14, took left forks
+[      1001] : philosopher 37, drop right
+[      1001] : philosopher 14, took right fork
+[      1001] : philosopher 37, drop left
+[      1001] : philosopher 14, is eating
+[      1001] : philosopher 24, took left forks
+[      1001] : philosopher 30, took left forks
+[      1001] : philosopher 30, took right fork
+[      1001] : philosopher 30, is eating
+[      1001] : philosopher 10, took left forks
+[      1001] : philosopher 48, took left forks
+[      1001] : philosopher 48, took right fork
+[      1001] : philosopher 48, is eating
+[      1001] : philosopher 46, took left forks
+[      1001] : philosopher 9, drop left
+[      1001] : philosopher 9, is sleeping
+[      1001] : philosopher 13, drop left
+[      1001] : philosopher 13, is sleeping
+[      1001] : philosopher 43, drop left
+[      1001] : philosopher 44, took left forks
+[      1001] : philosopher 44, took right fork
+[      1001] : philosopher 44, is eating
+[      1001] : philosopher 36, took left forks
+[      1001] : philosopher 36, took right fork
+[      1001] : philosopher 36, is eating
+[      1001] : philosopher 6, drop left
+[      1001] : philosopher 1, took left forks
+[      1001] : philosopher 22, took left forks
+[      1001] : philosopher 49, took right fork
+[      1001] : philosopher 4, drop left
+[      1001] : philosopher 4, drop right
+[      1001] : philosopher 4, is sleeping
+[      1001] : philosopher 7, took left forks
+[      1001] : philosopher 7, is eating
+[      1001] : philosopher 0, is sleeping
+[      1001] : philosopher 32, took left forks
+[      1001] : philosopher 19, drop right
+[      1001] : philosopher 32, took right fork
+[      1001] : philosopher 19, drop left
+[      1001] : philosopher 32, is eating
+[      1001] : philosopher 19, is sleeping
+[      1001] : philosopher 20, is eating
+[      1001] : philosopher 18, took left forks
+[      1001] : philosopher 18, took right fork
+[      1001] : philosopher 40, is eating
+[      1001] : philosopher 47, drop right
+[      1001] : philosopher 38, took right fork
+[      1001] : philosopher 5, took right fork
+[      1001] : philosopher 38, is eating
+[      1001] : philosopher 5, took left forks
+[      1001] : philosopher 5, is eating
+[      1001] : philosopher 35, drop right
+[      1001] : philosopher 35, drop left
+[      1001] : philosopher 6, drop right
+[      1001] : philosopher 28, took left forks
+[      1001] : philosopher 6, is sleeping
+[      1001] : philosopher 28, took right fork
+[      1001] : philosopher 28, is eating
+[      1001] : philosopher 27, drop right
+[      1001] : philosopher 27, drop left
+[      1001] : philosopher 27, is sleeping
+[      1001] : philosopher 26, took left forks
+[      1001] : philosopher 25, drop right
+[      1001] : philosopher 26, took right fork
+[      1001] : philosopher 10, took right fork
+[      1001] : philosopher 25, drop left
+[      1001] : philosopher 26, is eating
+[      1001] : philosopher 10, is eating
+[      1001] : philosopher 25, is sleeping
+[      1001] : philosopher 47, drop left
+[      1001] : philosopher 23, drop right
+[      1001] : philosopher 43, is sleeping
+[      1001] : philosopher 23, drop left
+[      1001] : philosopher 23, is sleeping
+[      1001] : philosopher 24, took right fork
+[      1001] : philosopher 24, is eating
+[      1001] : philosopher 46, took right fork
+[      1001] : philosopher 46, is eating
+[      1001] : philosopher 11, is sleeping
+[      1001] : philosopher 42, is eating
+[      1001] : philosopher 34, took left forks
+[      1001] : philosopher 34, took right fork
+[      1001] : philosopher 34, is eating
+[      1001] : philosopher 18, is eating
+[      1001] : philosopher 47, is sleeping
+[      1001] : philosopher 12, took right fork
+[      1001] : philosopher 35, is sleeping
+[      1001] : philosopher 16, took right fork
+[      1001] : philosopher 22, took right fork
+[      1001] : philosopher 22, is eating
+[      1001] : philosopher 1, is eating
+[      1001] : philosopher 12, is eating
+[      1001] : philosopher 37, is sleeping
+[      1002] : philosopher 21, is sleeping
+[      1002] : philosopher 16, is eating
+[      1101] : philosopher 23, is thinking
+[      1101] : philosopher 33, is thinking
+[      1101] : philosopher 29, is thinking
+[      1101] : philosopher 41, is thinking
+[      1101] : philosopher 9, is thinking
+[      1101] : philosopher 45, is thinking
+[      1101] : philosopher 4, is thinking
+[      1101] : philosopher 27, is thinking
+[      1101] : philosopher 17, is thinking
+[      1101] : philosopher 35, is thinking
+[      1101] : philosopher 6, is thinking
+[      1101] : philosopher 43, is thinking
+[      1101] : philosopher 15, is thinking
+[      1101] : philosopher 25, is thinking
+[      1101] : philosopher 39, is thinking
+[      1101] : philosopher 2, is thinking
+[      1101] : philosopher 31, is thinking
+[      1101] : philosopher 0, is thinking
+[      1101] : philosopher 47, is thinking
+[      1101] : philosopher 19, is thinking
+[      1101] : philosopher 13, is thinking
+[      1101] : philosopher 11, is thinking
+[      1102] : philosopher 37, is thinking
+[      1102] : philosopher 21, is thinking
+[      1201] : philosopher 24, drop left
+[      1201] : philosopher 24, drop right
+[      1201] : philosopher 24, is sleeping
+[      1201] : philosopher 3, drop right
+[      1201] : philosopher 3, drop left
+[      1201] : philosopher 3, is sleeping
+[      1201] : philosopher 48, drop left
+[      1201] : philosopher 1, drop right
+[      1201] : philosopher 48, drop right
+[      1201] : philosopher 48, is sleeping
+[      1201] : philosopher 49, took left forks
+[      1201] : philosopher 28, drop left
+[      1201] : philosopher 49, is eating
+[      1201] : philosopher 28, drop right
+[      1201] : philosopher 14, drop left
+[      1201] : philosopher 14, drop right
+[      1201] : philosopher 26, drop left
+[      1201] : philosopher 26, drop right
+[      1201] : philosopher 26, is sleeping
+[      1201] : philosopher 31, took right fork
+[      1201] : philosopher 10, drop left
+[      1201] : philosopher 20, drop left
+[      1201] : philosopher 20, drop right
+[      1201] : philosopher 45, took right fork
+[      1201] : philosopher 20, is sleeping
+[      1201] : philosopher 37, took right fork
+[      1201] : philosopher 41, took right fork
+[      1201] : philosopher 2, took left forks
+[      1201] : philosopher 2, took right fork
+[      1201] : philosopher 47, took right fork
+[      1201] : philosopher 11, took right fork
+[      1201] : philosopher 29, took right fork
+[      1201] : philosopher 11, took left forks
+[      1201] : philosopher 29, took left forks
+[      1201] : philosopher 27, took right fork
+[      1201] : philosopher 13, took right fork
+[      1201] : philosopher 27, took left forks
+[      1201] : philosopher 27, is eating
+[      1201] : philosopher 43, took right fork
+[      1201] : philosopher 9, took right fork
+[      1201] : philosopher 19, took right fork
+[      1201] : philosopher 9, took left forks
+[      1201] : philosopher 46, drop left
+[      1201] : philosopher 38, drop left
+[      1201] : philosopher 46, drop right
+[      1201] : philosopher 38, drop right
+[      1201] : philosopher 46, is sleeping
+[      1201] : philosopher 42, drop left
+[      1201] : philosopher 1, drop left
+[      1201] : philosopher 42, drop right
+[      1201] : philosopher 42, is sleeping
+[      1201] : philosopher 5, drop right
+[      1201] : philosopher 28, is sleeping
+[      1201] : philosopher 14, is sleeping
+[      1201] : philosopher 7, drop right
+[      1201] : philosopher 44, drop left
+[      1201] : philosopher 7, drop left
+[      1201] : philosopher 7, is sleeping
+[      1201] : philosopher 44, drop right
+[      1201] : philosopher 44, is sleeping
+[      1201] : philosopher 23, took right fork
+[      1201] : philosopher 39, took right fork
+[      1201] : philosopher 39, took left forks
+[      1201] : philosopher 39, is eating
+[      1201] : philosopher 25, took right fork
+[      1201] : philosopher 33, took right fork
+[      1201] : philosopher 8, took left forks
+[      1201] : philosopher 9, is eating
+[      1201] : philosopher 32, drop left
+[      1201] : philosopher 38, is sleeping
+[      1201] : philosopher 32, drop right
+[      1201] : philosopher 32, is sleeping
+[      1201] : philosopher 33, took left forks
+[      1201] : philosopher 12, drop left
+[      1201] : philosopher 30, drop left
+[      1201] : philosopher 13, took left forks
+[      1201] : philosopher 13, is eating
+[      1201] : philosopher 5, drop left
+[      1201] : philosopher 36, drop left
+[      1201] : philosopher 5, is sleeping
+[      1201] : philosopher 36, drop right
+[      1201] : philosopher 36, is sleeping
+[      1201] : philosopher 4, took left forks
+[      1201] : philosopher 4, took right fork
+[      1201] : philosopher 4, is eating
+[      1201] : philosopher 11, is eating
+[      1201] : philosopher 29, is eating
+[      1201] : philosopher 6, took left forks
+[      1201] : philosopher 47, took left forks
+[      1201] : philosopher 47, is eating
+[      1201] : philosopher 33, is eating
+[      1201] : philosopher 1, is sleeping
+[      1201] : philosopher 43, took left forks
+[      1201] : philosopher 43, is eating
+[      1201] : philosopher 12, drop right
+[      1201] : philosopher 12, is sleeping
+[      1201] : philosopher 10, drop right
+[      1201] : philosopher 10, is sleeping
+[      1201] : philosopher 2, is eating
+[      1201] : philosopher 45, took left forks
+[      1201] : philosopher 45, is eating
+[      1201] : philosopher 17, took right fork
+[      1201] : philosopher 6, took right fork
+[      1201] : philosopher 6, is eating
+[      1201] : philosopher 34, drop left
+[      1201] : philosopher 18, drop left
+[      1201] : philosopher 31, took left forks
+[      1201] : philosopher 19, took left forks
+[      1201] : philosopher 19, is eating
+[      1201] : philosopher 25, took left forks
+[      1201] : philosopher 25, is eating
+[      1201] : philosopher 35, took right fork
+[      1201] : philosopher 35, took left forks
+[      1201] : philosopher 18, drop right
+[      1201] : philosopher 35, is eating
+[      1201] : philosopher 18, is sleeping
+[      1201] : philosopher 31, is eating
+[      1201] : philosopher 40, drop left
+[      1201] : philosopher 34, drop right
+[      1201] : philosopher 30, drop right
+[      1201] : philosopher 40, drop right
+[      1201] : philosopher 40, is sleeping
+[      1201] : philosopher 30, is sleeping
+[      1201] : philosopher 41, took left forks
+[      1201] : philosopher 34, is sleeping
+[      1201] : philosopher 37, took left forks
+[      1201] : philosopher 37, is eating
+[      1201] : philosopher 41, is eating
+[      1202] : philosopher 16, drop left
+[      1202] : philosopher 22, drop left
+[      1202] : philosopher 21, took right fork
+[      1202] : philosopher 21, took left forks
+[      1202] : philosopher 23, took left forks
+[      1202] : philosopher 16, drop right
+[      1202] : philosopher 22, drop right
+[      1202] : philosopher 22, is sleeping
+[      1202] : philosopher 21, is eating
+[      1202] : philosopher 15, took right fork
+[      1202] : philosopher 17, took left forks
+[      1202] : philosopher 17, is eating
+[      1202] : philosopher 23, is eating
+[      1202] : philosopher 15, took left forks
+[      1202] : philosopher 15, is eating
+[      1202] : philosopher 16, is sleeping
+[      1301] : philosopher 38, is thinking
+[      1301] : philosopher 12, is thinking
+[      1301] : philosopher 20, is thinking
+[      1301] : philosopher 3, is thinking
+[      1301] : philosopher 40, is thinking
+[      1301] : philosopher 48, is thinking
+[      1301] : philosopher 36, is thinking
+[      1301] : philosopher 46, is thinking
+[      1301] : philosopher 44, is thinking
+[      1301] : philosopher 26, is thinking
+[      1301] : philosopher 30, is thinking
+[      1301] : philosopher 42, is thinking
+[      1301] : philosopher 34, is thinking
+[      1301] : philosopher 32, is thinking
+[      1301] : philosopher 18, is thinking
+[      1301] : philosopher 28, is thinking
+[      1301] : philosopher 5, is thinking
+[      1301] : philosopher 10, is thinking
+[      1301] : philosopher 24, is thinking
+[      1301] : philosopher 1, is thinking
+[      1301] : philosopher 7, is thinking
+[      1301] : philosopher 14, is thinking
+[      1302] : philosopher 22, is thinking
+[      1302] : philosopher 16, is thinking
+gtime = 1638808612761, lastmeal = 1638808611961, timetodie = 800[      1401] : philosopher 9, is dead

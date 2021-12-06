@@ -7,6 +7,7 @@ typedef struct s_philo
 	pthread_t		philo;	
 	bool			state;
 	size_t			last_meal;
+	pthread_mutex_t		lock_meal;
 	unsigned int	eaten_count;			
 }				t_philo;
 

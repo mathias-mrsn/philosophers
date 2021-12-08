@@ -2,7 +2,7 @@
 
 
 
-
+/*
 
 size_t	__get_time__(void)
 {
@@ -155,21 +155,21 @@ void	*ft_philosopher_is_born(void	*philosopher)
 	pthread_mutex_lock(&s()->lock);
 	philo->last_meal = __get_time__();
 	pthread_mutex_unlock(&s()->lock);
-	while(SUCCESS == ft_is_alive(philo) && false == s()->stop_program)
+	while(false == s()->stop_program)
 	{
 		ft_take_forks(id);
 		ft_is_eating(id);
 		ft_drop_forks(id);
 		ft_is_sleeping(id);
 		ft_status(id, IS_THINKING);
-		__usleep(s()->time_to_eat - s()->time_to_sleep);
+		// __usleep(s()->time_to_eat - s()->time_to_sleep);
 	}
 	return (NULL);
 }
 
+*/
 
 
-/*
 
 void	take_forks(t_philo *philo)
 {
@@ -211,14 +211,6 @@ void	drop_forks(t_philo *philo)
 	}
 }
 
-size_t	__get_time_micro__(void)
-{
-	struct timeval time;
-
-	gettimeofday(&time, NULL);
-	return ((size_t)((time.tv_sec * 1000000) + (time.tv_usec)));
-}
-
 size_t	__get_time__(void)
 {
 	struct timeval time;
@@ -227,9 +219,28 @@ size_t	__get_time__(void)
 	return ((size_t)((time.tv_sec * 1000) + (time.tv_usec / 1000)));
 }
 
+void	__status__(t_philo *philo, int m)
+{
+	const char *str[4] = {"is dead", "is thinking", "is sleeping", "is eating"};
+	pthread_mutex_lock(&s()->talk);
+	printf("[%10zu]  %d --> %s\n", __get_time__() - s()->start_time, philo->id, str[m]);
+	if (m != 0)
+		pthread_mutex_unlock(&s()->talk);
+}
+
+size_t	__get_time_micro__(void)
+{
+	struct timeval time;
+
+	gettimeofday(&time, NULL);
+	return ((size_t)((time.tv_sec * 1000000) + (time.tv_usec)));
+}
+
+
+
 int		is_alive(t_philo *philo)
 {
-	if (__get_time_micro__() - philo->last_meal >= s()->time_to_die * 1000)
+	if (__get_time_micro__() - philo->last_meal <= s()->time_to_die * 1000)
 	{
 		return (ERROR);
 	}
@@ -242,7 +253,22 @@ void	__usleep__(int64_t ms)
 
 	now = __get_time_micro__();
 	while(now - __get_time_micro__() < (size_t)(ms * 1000))
-		usleep(50);
+		usleep(500);
+}
+
+void	is_eating(t_philo *philo)
+{
+	__status__(philo, 3);
+	pthread_mutex_lock(&philo->lock_meal);
+	philo->last_meal = __get_time_micro__();
+	philo->eaten_count++;
+	pthread_mutex_unlock(&philo->lock_meal);
+}
+
+void	is_sleping(t_philo *philo)
+{
+	__status__(philo, 2);
+	__usleep__(s()->time_to_sleep);
 }
 
 void	*ft_philosopher_is_born(void	*philosopher)
@@ -254,14 +280,17 @@ void	*ft_philosopher_is_born(void	*philosopher)
 	pthread_mutex_lock(&philo->lock_meal);
 	philo->last_meal = __get_time_micro__();
 	pthread_mutex_unlock(&philo->lock_meal);
-	while (SUCCESS == is_alive(philo))
+	while (false == s()->stop_program)
 	{
 		take_forks(philo);
+		is_eating(philo);
 		drop_forks(philo);
-		__usleep__(s()->time_to_eat - s()->time_to_sleep);
-		printf("It's working !\n");
+		is_sleping(philo);
+		__status__(philo, 1);
+		// __usleep__(s()->time_to_eat - s()->time_to_sleep);
+		// printf("It's working !\n");
 	}
-	printf("%zu\n", philo->last_meal);
+	// printf("%zu\n", philo->last_meal);
 	return (NULL);
 }
 
@@ -269,7 +298,7 @@ void	*ft_philosopher_is_born(void	*philosopher)
 
 
 
-*/
+
 
 
 
@@ -285,11 +314,13 @@ void	ft_lets_go_eat(t_global	*ph)
 	while(i < ph->philo_nbr)
 	{
 		pthread_mutex_init(&ph->forks[i], NULL);
+		pthread_mutex_init(&ph->philosophers[i].lock_meal, NULL);
 		i++;
 	}
+	pthread_mutex_init(&ph->talk, NULL);
 	pthread_mutex_init(&ph->lock, NULL);
 	i = 0;
-	pthread_mutex_lock(&s()->lock);
+	pthread_mutex_lock(&ph->lock);
 	while(i < ph->philo_nbr)
 	{
 		pthread_create(&ph->philosophers[i].philo, NULL, &ft_philosopher_is_born, &ph->philosophers[i]);

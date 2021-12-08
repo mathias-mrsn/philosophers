@@ -3,9 +3,8 @@
 
 
 
-/*
 
-size_t	ft_get_time(void)
+size_t	__get_time__(void)
 {
 	struct timeval time;
 
@@ -16,7 +15,7 @@ size_t	ft_get_time(void)
 void	ft_status(int	id, char *str)
 {
 	pthread_mutex_lock(&s()->lock);
-	printf("[%10lu] : philosopher %d, %s\n", ft_get_time() - s()->start_time, id, str);
+	printf("[%10lu] : philosopher %d, %s\n", __get_time__() - s()->start_time, id, str);
 	if(s()->stop_program == false)
 		pthread_mutex_unlock(&s()->lock);
 }
@@ -70,9 +69,9 @@ void	ft_drop_forks(int id)
 
 void	__usleep(int64_t	time)
 {
-	const	int64_t instant_t = ft_get_time();
+	const	int64_t instant_t = __get_time__();
 
-	while ((int64_t)ft_get_time() - instant_t < time)
+	while ((int64_t)__get_time__() - instant_t < time)
 		usleep(500);
 }
 
@@ -82,7 +81,7 @@ void	ft_is_eating(int id)
 	
 	pthread_mutex_lock(&s()->lock);
 	// printf("ID = %d\n", id);
-	s()->philosophers[id].last_meal = ft_get_time();
+	s()->philosophers[id].last_meal = __get_time__();
 	printf("LAST MEAL = %zu\n", s()->philosophers[id].last_meal);
 	s()->philosophers[id].eaten_count++;
 	pthread_mutex_unlock(&s()->lock);
@@ -101,22 +100,22 @@ void	ft_is_sleeping(int id)
 
 void	ft_is_dead(int id)
 {
-	// printf("get_time = %lu, mystart = %lu", ft_get_time(), s()->start_time);
-	printf("[%10lu] : philosopher %d, %s\n", ft_get_time() - s()->start_time, id, IS_DEAD);
+	// printf("get_time = %lu, mystart = %lu", __get_time__(), s()->start_time);
+	printf("[%10lu] : philosopher %d, %s\n", __get_time__() - s()->start_time, id, IS_DEAD);
 }
 
 
 int		ft_is_alive(t_philo	*philo)
 {
 	pthread_mutex_lock(&s()->lock);
-	if (ft_get_time() - philo->last_meal < (size_t)s()->time_to_die)
+	if (__get_time__() - philo->last_meal < (size_t)s()->time_to_die)
 	{
 		pthread_mutex_unlock(&s()->lock);
 		
 		return (SUCCESS);
 	}
 	printf("is dead");
-	printf("gtime = %zu, lastmeal = %zu, timetodie = %zu", ft_get_time(), philo->last_meal, (size_t)s()->time_to_die);
+	printf("gtime = %zu, lastmeal = %zu, timetodie = %zu", __get_time__(), philo->last_meal, (size_t)s()->time_to_die);
 	return (ERROR);
 }
 
@@ -127,12 +126,12 @@ void	*ft_end_of_program(void	*content)
 
 	(void)content;
 	i = 0;
-	__usleep(1000);
 	while (1)
 	{
+		usleep(100);
 		if (ERROR == ft_is_alive(&s()->philosophers[i]))
 		{
-			// s()->stop_program = true;
+			s()->stop_program = true;
 			ft_is_dead(i + 1);
 			exit(1);
 		}
@@ -153,6 +152,9 @@ void	*ft_philosopher_is_born(void	*philosopher)
 	t_philo *philo = ((t_philo *)philosopher);
 
 	id = philo->id;
+	pthread_mutex_lock(&s()->lock);
+	philo->last_meal = __get_time__();
+	pthread_mutex_unlock(&s()->lock);
 	while(SUCCESS == ft_is_alive(philo) && false == s()->stop_program)
 	{
 		ft_take_forks(id);
@@ -165,7 +167,9 @@ void	*ft_philosopher_is_born(void	*philosopher)
 	return (NULL);
 }
 
-*/
+
+
+/*
 
 void	take_forks(t_philo *philo)
 {
@@ -265,7 +269,7 @@ void	*ft_philosopher_is_born(void	*philosopher)
 
 
 
-
+*/
 
 
 
@@ -285,14 +289,18 @@ void	ft_lets_go_eat(t_global	*ph)
 	}
 	pthread_mutex_init(&ph->lock, NULL);
 	i = 0;
-	ph->start_time = __get_time__();
+	pthread_mutex_lock(&s()->lock);
 	while(i < ph->philo_nbr)
 	{
 		pthread_create(&ph->philosophers[i].philo, NULL, &ft_philosopher_is_born, &ph->philosophers[i]);
 		i++;
 	}
+	ph->start_time = __get_time__();
+	pthread_mutex_unlock(&s()->lock);
 	// pthread_create(&ph->checker, NULL, &ft_end_of_program, NULL);
 	i = 0;
 	while(i < ph->philo_nbr)
 		pthread_join(ph->philosophers[i++].philo, NULL);
 }
+
+

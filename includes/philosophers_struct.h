@@ -7,23 +7,22 @@ typedef struct s_philo
 	pthread_t		philo;	
 	bool			state;
 	size_t			last_meal;
-	pthread_mutex_t lock_meal;
-	unsigned int	eaten_count;			
+	unsigned int	eaten_count;	
+	uint64_t		recalibration;		
 }				t_philo;
 
 typedef struct s_global
 {
-	unsigned int	philo_nbr;
-	unsigned int	time_to_eat;
-	unsigned int	time_to_die;
-	unsigned int	time_to_sleep;
-	unsigned int	times_must_eat;
-	bool			stop_program;
+	uint32_t		philo_nbr;
+	uint32_t		time_to_eat;
+	uint32_t		time_to_die;
+	uint32_t		time_to_sleep;
+	uint32_t		times_must_eat;
+	uint32_t		set_id;
 	size_t			start_time;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t lock;
 	pthread_mutex_t talk;
-	pthread_t		checker;
 	struct s_philo	*philosophers;
 
 }				t_global;

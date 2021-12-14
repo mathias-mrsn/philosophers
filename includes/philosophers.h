@@ -6,20 +6,18 @@
 # define SUCCESS 0
 # define ERROR 1
 
-# define IS_EATING "is eating"
-# define FORK_LEFT "took left forks"
-# define FORK_RIGHT "took right fork"
-# define IS_THINKING "is thinking"
-# define IS_SLEEPING "is sleeping"
-# define IS_DEAD "is dead"
-# define DROP_LEFT "drop left"
-# define DROP_RIGHT "drop right"
+# define EAT "is eating"
+# define FORK "took left forks"
+# define THINK "is thinking"
+# define SLEEP "is sleeping"
+# define DEAD "is dead"
 
 
 # define INVALID (-1)
 
-# include <libc.h> // Delete it !
-
+# include <string.h>
+# include <limits.h>
+# include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <stdbool.h>
@@ -27,20 +25,41 @@
 # include <pthread.h> //mutex and threads
 # include "philosophers_struct.h"
 
-/*	STRUCT		*/
+/*
+    DAILY STEPS
+*/
 
-t_global	*s(void);
+void	ft_take_forks(t_philo *philo, t_global *ph);
+void	ft_is_sleeping(t_philo *philo, t_global *ph);
+void	ft_is_eating(t_philo *philo, t_global *ph);
+void	ft_drop_forks(t_philo *philo, t_global *ph);
 
-/*	PARSING		*/
+/*	
+    PARSING
+*/
 
 void	ft_parsing(int ac, char **av, t_global *p);
 
-/*	FREE		*/
+/*
+    EXIT
+*/
 
-void	ft_exit(char *arg, char *text, bool	end);
+void	ft_exit(char *arg, char *text, bool	end, t_global *ph);
 
+/*
+    ROUTINE
+*/
 
 void	ft_lets_go_eat(t_global	*ph);
 
+/*
+    UTILS
+*/
+
+size_t	__get_time_micro__(void);
+size_t	__get_time__(void);
+void	__status__(int	id, int	status, t_global *ph);
+void	__usleep__(t_philo *philo, size_t	time, t_global *ph);
+int		__still_alive__(t_philo	*philo, t_global *ph);
 
 #endif

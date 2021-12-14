@@ -1,9 +1,11 @@
-NAME =		philosophers
+NAME =		philo
 
 SRCS = 		srcs/main.c \
 			srcs/parsing.c \
 			srcs/exit.c \
-			srcs/lets_go_eat.c
+			srcs/routine.c \
+			srcs/utils.c \
+			srcs/daily_steps.c
 
 OBJS = ${SRCS:.c=.o}
 
@@ -22,7 +24,7 @@ RM		=	rm -rf
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			${CC} ${CFLAGS} -g3 -fsanitize=thread ${INCS} -lpthread ${OBJS} -o ${NAME}
+			${CC} ${CFLAGS} -g3 -fsanitize=address ${INCS} -lpthread ${OBJS} -o ${NAME}
 
 clean:
 			${RM} ${OBJS}

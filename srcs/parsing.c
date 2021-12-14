@@ -6,13 +6,13 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:52 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:16:53 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/14 17:23:59 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-static void		__print_err__(void)
+static void	__print_err__(void)
 {
 	printf("Incorrect syntax\n");
 	printf("./philo ");
@@ -25,8 +25,8 @@ static void		__print_err__(void)
 
 static int64_t	__ft_atol_lite__(const char *str)
 {
-	int	i;
-	int	neg;
+	int		i;
+	int		neg;
 	int64_t	res;
 
 	res = 0;
@@ -40,36 +40,35 @@ static int64_t	__ft_atol_lite__(const char *str)
 	return (res * neg);
 }
 
-static unsigned int	__ft_get_arg__(char *arg)
+static uint32_t	__ft_get_arg__(char *arg)
 {
-	unsigned int i;
-	int64_t			value;
+	uint32_t	i;
+	int64_t		value;
 
 	i = 0;
-	while(arg[i])
+	while (arg[i])
 	{
-		if(arg[i] < '0' || arg[i] > '9' || i >= INT32MAX_SIZE)
+		if (arg[i] < '0' || arg[i] > '9' || i >= INT32MAX_SIZE)
 			return (INVALID);
 		i++;
 	}
-	if(i == 0)
+	if (i == 0)
 		return (INVALID);
 	value = __ft_atol_lite__(arg);
-	if(value > INT_MAX || value < 0)
+	if (value > INT_MAX || value < 0)
 		return (INVALID);
 	return (value);
 }
 
 static bool	__ft_check_arg__(t_global *ph)
 {
-	if(ph->philo_nbr == (unsigned int)INVALID 
-		|| ph->time_to_die == (unsigned int)INVALID 
-		|| ph->time_to_eat == (unsigned int)INVALID 
-		|| ph->time_to_sleep == (unsigned int)INVALID 
+	if (ph->philo_nbr == (unsigned int)INVALID
+		|| ph->time_to_die == (unsigned int)INVALID
+		|| ph->time_to_eat == (unsigned int)INVALID
+		|| ph->time_to_sleep == (unsigned int)INVALID
 		|| ph->times_must_eat == (unsigned int)INVALID)
 		return (__print_err__(), ERROR);
 	return (SUCCESS);
-
 }
 
 void	ft_parsing(int ac, char **av, t_global *ph)
@@ -85,7 +84,6 @@ void	ft_parsing(int ac, char **av, t_global *ph)
 	ph->time_to_sleep = __ft_get_arg__(av[4]);
 	if (ac == 6)
 		ph->times_must_eat = __ft_get_arg__(av[5]);
-	if(__ft_check_arg__(ph) == ERROR)
+	if (__ft_check_arg__(ph) == ERROR)
 		ft_exit("1", NULL, ERROR, ph);
-
 }

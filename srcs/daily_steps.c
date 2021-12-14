@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:47 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:16:48 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/14 17:20:24 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void	ft_is_sleeping(t_philo *philo, t_global *ph)
 
 void	ft_take_forks(t_philo *philo, t_global *ph)
 {
-	unsigned int left;
-	unsigned int right;
+	uint32_t	left;
+	uint32_t	right;
 
 	left = philo->id;
 	right = (philo->id + 1) % ph->philo_nbr;
-	if(0 == philo->id % 2)
+	if (0 == philo->id % 2)
 	{
 		pthread_mutex_lock(&ph->forks[left]);
 		__status__(philo->id, 1, ph);
@@ -51,12 +51,12 @@ void	ft_take_forks(t_philo *philo, t_global *ph)
 
 void	ft_drop_forks(t_philo *philo, t_global *ph)
 {
-	unsigned int left;
-	unsigned int right;
+	uint32_t	left;
+	uint32_t	right;
 
 	left = philo->id;
 	right = (philo->id + 1) % ph->philo_nbr;
-	if(1 == philo->id % 2)
+	if (0 == philo->id % 2)
 	{
 		pthread_mutex_unlock(&ph->forks[right]);
 		pthread_mutex_unlock(&ph->forks[left]);

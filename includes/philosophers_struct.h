@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:44 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:16:45 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/14 17:34:24 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ typedef struct s_global
 	uint32_t		set_id;
 	size_t			start_time;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t lock;
-	pthread_mutex_t talk;
+	pthread_mutex_t	lock;
+	pthread_mutex_t	talk;
 	struct s_philo	*philosophers;
 
 }				t_global;

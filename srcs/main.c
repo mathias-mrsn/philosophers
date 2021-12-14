@@ -6,25 +6,24 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:51 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:16:51 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/14 17:22:01 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-
-
 void	__ft_alloc__(t_global	*ph)
 {
-	static size_t	i = 0;
+	int	i;
 
+	i = 0;
 	ph->philosophers = malloc(ph->philo_nbr * sizeof(t_philo));
-	if(!ph->philosophers)
+	if (!ph->philosophers)
 		ft_exit("1", "malloc error", ERROR, ph);
 	ph->forks = malloc(ph->philo_nbr * sizeof(pthread_mutex_t));
-	if(!ph->forks)
+	if (!ph->forks)
 		ft_exit("12", "malloc error", ERROR, ph);
-	while(i < ph->philo_nbr)
+	while (i < ph->philo_nbr)
 	{
 		memset(&ph->philosophers[i], 0, sizeof(t_philo));
 		ph->philosophers[i].id = i;
@@ -32,10 +31,9 @@ void	__ft_alloc__(t_global	*ph)
 	}
 }
 
-
 int	main(int ac, char **av)
 {
-	t_global *s;
+	t_global	*s;
 
 	s = NULL;
 	s = malloc(sizeof(t_global));

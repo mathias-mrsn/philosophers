@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:46 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:16:46 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/14 17:33:48 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # define THINK "is thinking"
 # define SLEEP "is sleeping"
 # define DEAD "is dead"
-
 
 # define INVALID (-1)
 
@@ -70,7 +69,7 @@ void	ft_lets_go_eat(t_global	*ph);
 
 size_t	__get_time_micro__(void);
 size_t	__get_time__(void);
-void	__status__(int	id, int	status, t_global *ph);
+void	__status__(int id, int status, t_global *ph);
 void	__usleep__(t_philo *philo, size_t	time, t_global *ph);
 int		__still_alive__(t_philo	*philo, t_global *ph);
 

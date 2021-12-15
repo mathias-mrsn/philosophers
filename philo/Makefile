@@ -6,7 +6,7 @@
 #    By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 17:17:00 by mamaurai          #+#    #+#              #
-#    Updated: 2021/12/14 17:17:00 by mamaurai         ###   ########.fr        #
+#    Updated: 2021/12/15 08:51:21 by mamaurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = 		srcs/main.c \
 
 OBJS = ${SRCS:.c=.o}
 
-INCS	=	-I ./includes -I libft/includes/
+INCS	=	-I ./includes
 
 CC		=	clang
 

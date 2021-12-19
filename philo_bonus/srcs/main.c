@@ -7,9 +7,7 @@ void	close_pid(t_global *ph)
 	i = 0;
 	while(i < ph->philo_nbr)
 	{
-		// printf("%d\n", ph->id_stock);
-		if (i != ph->id_stock)
-			kill(ph->philosophers[i].pid, SIGTERM);
+		kill(ph->philosophers[i].pid, SIGTERM);
 		i++;
 	}
 }
@@ -95,7 +93,6 @@ void	ft_drop_forks(t_global *ph)
 }
 
 
-
 static void	*death(void	*content)
 {
 	t_global	*ph;
@@ -110,8 +107,7 @@ static void	*death(void	*content)
 		usleep(100);
 		test = __still_alive__(&ph->philosophers[ph->id_stock], ph);
 		if (ph->philosophers[i].state != 2 && ERROR == test)
-		{
-			close_pid(ph);
+		{			
 			exit(0);
 		}
 		i++;
@@ -119,6 +115,7 @@ static void	*death(void	*content)
 			i = 0;
 	}
 }
+
 
 static void	*ft_philosopher_is_born(t_global *ph, const uint32_t id)
 {

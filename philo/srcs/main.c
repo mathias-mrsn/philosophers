@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:51 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:22:01 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/18 18:48:07 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	__ft_alloc__(t_global	*ph)
 {
-	int	i;
+	uint32_t	i;
 
 	i = 0;
 	ph->philosophers = malloc(ph->philo_nbr * sizeof(t_philo));
@@ -40,6 +40,7 @@ int	main(int ac, char **av)
 	if (!s)
 		return (0);
 	memset(s, 0, sizeof(t_global));
+	s->times_must_eat = -1;
 	ft_parsing(ac, av, s);
 	__ft_alloc__(s);
 	ft_lets_go_eat(s);

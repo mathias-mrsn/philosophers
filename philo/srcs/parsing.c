@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:52 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:23:59 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/18 22:31:10 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static void	__print_err__(void)
 {
 	printf("Incorrect syntax\n");
 	printf("./philo ");
-	printf(" [number_of_philosophers]");
-	printf(" [time_to_die]");
-	printf(" [time_to_eat]");
-	printf(" [time_to_sleep]");
-	printf(" (number_of_times_each_philosopher_must_eat)\n");
+	printf(" [number_of_philosophers <0-200> ]");
+	printf(" [time_to_die <+60> ]");
+	printf(" [time_to_eat <+60> ]");
+	printf(" [time_to_sleep <+60> ]");
+	printf(" (number_of_times_each_philosopher_must_eat <+0> )\n");
 }
 
 static int64_t	__ft_atol_lite__(const char *str)
@@ -60,13 +60,15 @@ static uint32_t	__ft_get_arg__(char *arg)
 	return (value);
 }
 
-static bool	__ft_check_arg__(t_global *ph)
+static int	__ft_check_arg__(t_global *ph)
 {
 	if (ph->philo_nbr == (unsigned int)INVALID
 		|| ph->time_to_die == (unsigned int)INVALID
 		|| ph->time_to_eat == (unsigned int)INVALID
 		|| ph->time_to_sleep == (unsigned int)INVALID
-		|| ph->times_must_eat == (unsigned int)INVALID)
+		|| ph->times_must_eat == (unsigned int)INVALID
+		|| ph->philo_nbr > 200 || ph->time_to_sleep < 60
+		|| ph->time_to_die < 60 || ph->time_to_eat < 60)
 		return (__print_err__(), ERROR);
 	return (SUCCESS);
 }

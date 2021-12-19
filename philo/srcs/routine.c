@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:54 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:30:04 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/18 23:23:43 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,17 @@
 
 static void	*ft_philosopher_is_born(void	*content)
 {
-	const t_global	*ph = ((t_global *)content);
-	int32_t			id;
+	t_global	*ph;
+	int32_t		id;
 
+	ph = ((t_global *)content);
 	pthread_mutex_lock(&ph->lock);
 	id = ph->set_id++;
-	pthread_mutex_unlock(&ph->lock);
 	ph->philosophers[id].last_meal = __get_time__();
-	if (ph->philo_nbr == 1)
-	{
-		__status__(ph->philosophers[id].id, 1, ph);
-		return (__usleep__(&ph->philosophers[id], (size_t)INT_MAX, ph), NULL);
-	}
-	while (SUCCESS == __still_alive__(&ph->philosophers[id], ph)
-		&& (!ph->times_must_eat
+	pthread_mutex_unlock(&ph->lock);
+	if (0 == (id % 2) && ph->philo_nbr > 1)
+		__usleep__(ph->time_to_eat);
+	while (!ph->stop && (-1 == ph->times_must_eat
 			|| ph->philosophers[id].eaten_count < ph->times_must_eat))
 	{
 		ft_take_forks(&ph->philosophers[id], ph);
@@ -35,10 +32,33 @@ static void	*ft_philosopher_is_born(void	*content)
 		ft_drop_forks(&ph->philosophers[id], ph);
 		ft_is_sleeping(&ph->philosophers[id], ph);
 		__status__(ph->philosophers[id].id, 4, ph);
-		__usleep__(&ph->philosophers[id],
-			(size_t)(ph->time_to_eat - ph->time_to_sleep), ph);
+		__usleep__((size_t)(ph->time_to_eat - ph->time_to_sleep));
 	}
 	return (NULL);
+}
+
+static void	*death(void	*content)
+{
+	t_global	*ph;
+	uint32_t	i;
+	int			test;
+
+	i = 0;
+	ph = ((t_global *)content);
+	while (1)
+	{
+		usleep(100);
+		pthread_mutex_lock(&ph->philosophers[i].lock_philo);
+		test = __still_alive__(&ph->philosophers[i], ph);
+		pthread_mutex_unlock(&ph->philosophers[i].lock_philo);
+		if (ph->philosophers[i].state != 2 && ERROR == test)
+		{
+			ft_exit("012", NULL, 0, ph);
+		}
+		i++;
+		if (i == ph->philo_nbr)
+			i = 0;
+	}
 }
 
 void	ft_lets_go_eat(t_global	*ph)
@@ -49,6 +69,7 @@ void	ft_lets_go_eat(t_global	*ph)
 	while (i < ph->philo_nbr)
 	{
 		pthread_mutex_init(&ph->forks[i], NULL);
+		pthread_mutex_init(&ph->philosophers[i].lock_philo, NULL);
 		i++;
 	}
 	pthread_mutex_init(&ph->talk, NULL);
@@ -61,8 +82,9 @@ void	ft_lets_go_eat(t_global	*ph)
 			NULL, &ft_philosopher_is_born, ph);
 		i++;
 	}
-	ph->start_time = __get_time_micro__();
+	ph->start_time = __get_time__();
 	pthread_mutex_unlock(&ph->lock);
+	pthread_create(&ph->death, NULL, &death, ph);
 	i = 0;
 	while (i < ph->philo_nbr)
 		pthread_join(ph->philosophers[i++].philo, NULL);

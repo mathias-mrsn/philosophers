@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:47 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:20:24 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/18 19:20:06 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 void	ft_is_eating(t_philo *philo, t_global *ph)
 {
 	__status__(philo->id, 2, ph);
+	pthread_mutex_lock(&philo->lock_philo);
 	philo->last_meal = __get_time__();
 	philo->eaten_count++;
-	__usleep__(philo, ph->time_to_eat, ph);
+	if (philo->eaten_count == ph->times_must_eat)
+		philo->state = 2;
+	pthread_mutex_unlock(&philo->lock_philo);
+	__usleep__(ph->time_to_eat);
 }
 
 void	ft_is_sleeping(t_philo *philo, t_global *ph)
 {
 	__status__(philo->id, 3, ph);
-	__usleep__(philo, ph->time_to_sleep, ph);
+	__usleep__(ph->time_to_sleep);
 }
 
 void	ft_take_forks(t_philo *philo, t_global *ph)

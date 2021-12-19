@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:49 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/14 17:48:40 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/18 19:19:31 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,17 @@ static int	__free_struct__(t_global *ph)
 
 static int	__free_mutex__(t_global *ph)
 {
-	uint32_t i;
+	uint32_t	i;
 
 	i = 0;
-	while(i < ph->philo_nbr)
+	while (i < ph->philo_nbr)
 	{
-		pthread_mutex_destroy(ph->philosophers[i].philo);
+		pthread_mutex_destroy(&ph->philosophers[i].lock_philo);
+		pthread_mutex_destroy(&ph->forks[i]);
 		i++;
 	}
+	pthread_mutex_destroy(&ph->lock);
+	pthread_mutex_destroy(&ph->talk);
 	free(ph->forks);
 	return (0);
 }

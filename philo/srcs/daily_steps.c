@@ -6,13 +6,14 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:47 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/18 19:20:06 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/20 21:49:42 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	ft_is_eating(t_philo *philo, t_global *ph)
+void
+	ft_is_eating(t_philo *philo, t_global *ph)
 {
 	__status__(philo->id, 2, ph);
 	pthread_mutex_lock(&philo->lock_philo);
@@ -21,16 +22,18 @@ void	ft_is_eating(t_philo *philo, t_global *ph)
 	if (philo->eaten_count == ph->times_must_eat)
 		philo->state = 2;
 	pthread_mutex_unlock(&philo->lock_philo);
-	__usleep__(ph->time_to_eat);
+	__usleep__(ph->time_to_eat, ph);
 }
 
-void	ft_is_sleeping(t_philo *philo, t_global *ph)
+void
+	ft_is_sleeping(t_philo *philo, t_global *ph)
 {
 	__status__(philo->id, 3, ph);
-	__usleep__(ph->time_to_sleep);
+	__usleep__(ph->time_to_sleep, ph);
 }
 
-void	ft_take_forks(t_philo *philo, t_global *ph)
+void
+	ft_take_forks(t_philo *philo, t_global *ph)
 {
 	uint32_t	left;
 	uint32_t	right;
@@ -53,7 +56,8 @@ void	ft_take_forks(t_philo *philo, t_global *ph)
 	}
 }
 
-void	ft_drop_forks(t_philo *philo, t_global *ph)
+void
+	ft_drop_forks(t_philo *philo, t_global *ph)
 {
 	uint32_t	left;
 	uint32_t	right;

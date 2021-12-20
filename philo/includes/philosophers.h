@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:46 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/18 18:14:43 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/20 21:47:32 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,13 @@
 
 # define SUCCESS 0
 # define ERROR 1
+# define INVALID (-1)
 
 # define EAT "is eating"
 # define FORK "has taken a fork"
 # define THINK "is thinking"
 # define SLEEP "is sleeping"
 # define DEAD "died"
-
-# define INVALID (-1)
 
 # include <string.h>
 # include <limits.h>
@@ -33,11 +32,11 @@
 # include <stdlib.h>
 # include <stdbool.h>
 # include <sys/time.h>
-# include <pthread.h> //mutex and threads
+# include <pthread.h>
 # include "philosophers_struct.h"
 
 /*
-    DAILY STEPS
+	DAILY STEPS
 */
 
 void	ft_take_forks(t_philo *philo, t_global *ph);
@@ -46,31 +45,30 @@ void	ft_is_eating(t_philo *philo, t_global *ph);
 void	ft_drop_forks(t_philo *philo, t_global *ph);
 
 /*	
-    PARSING
+	PARSING
 */
 
 void	ft_parsing(int ac, char **av, t_global *p);
 
 /*
-    EXIT
+	EXIT
 */
 
 void	ft_exit(char *arg, char *text, bool	end, t_global *ph);
 
 /*
-    ROUTINE
+	ROUTINE
 */
 
 void	ft_lets_go_eat(t_global	*ph);
 
 /*
-    UTILS
+	UTILS
 */
 
-// size_t	__get_time_micro__(void);
 size_t	__get_time__(void);
 void	__status__(int id, int status, t_global *ph);
-void	__usleep__(size_t	time);
+void	__usleep__(size_t	time, t_global *ph);
 int		__still_alive__(t_philo	*philo, t_global *ph);
 
 #endif

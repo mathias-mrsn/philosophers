@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:44 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/18 19:19:05 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/20 22:01:46 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_global
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	lock;
 	pthread_mutex_t	talk;
+	int				stop_talking;
 	pthread_t		death;
 	struct s_philo	*philosophers;
 

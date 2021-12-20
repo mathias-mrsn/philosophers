@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   memory.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/20 09:44:43 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/20 09:44:44 by mamaurai         ###   ########.fr       */
+/*   Created: 2021/12/20 09:44:48 by mamaurai          #+#    #+#             */
+/*   Updated: 2021/12/20 09:44:49 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo_bonus.h"
 
-int
-	main(int ac, char **av)
+void
+	*alloc(t_global *ph)
 {
-	t_global	*ph;
+	
+	ph->philosophers = malloc(sizeof(t_philo) * ph->philo_nbr);
+	if(!ph->philosophers)
+		return (free(ph), NULL);
+	return (ph);
+}
 
-	ph = malloc(sizeof(t_global));
-	if (!ph)
-		return (0);
-	memset(ph, 0, sizeof(t_global));
-	ph->times_must_eat = -1;
-	ft_parsing(ac, av, ph);
-	unlink_semaphore();
-	open_semaphore(ph);
-	if (!alloc(ph))
-		return (1);
-	ft_start_meal(ph);
+void
+	quit(t_global *ph)
+{
+	// close_semaphore(ph);
+	// unlink_semaphore();
+	// close_pid(ph);
+	if (ph->philosophers)
+		free(ph->philosophers);
+	if (ph)
+		free(ph);
 }

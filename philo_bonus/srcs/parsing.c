@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/20 09:44:50 by mamaurai          #+#    #+#             */
+/*   Updated: 2021/12/20 09:44:51 by mamaurai         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo_bonus.h"
 
 static void	__print_err__(void)
@@ -66,7 +78,8 @@ void	ft_parsing(int ac, char **av, t_global *ph)
 	if (ac != 6 && ac != 5)
 	{
 		__print_err__();
-		// ft_exit("1", NULL, ERROR, ph);
+		free(ph);
+		exit(1);
 	}
 	ph->philo_nbr = __ft_get_arg__(av[1]);
 	ph->time_to_die = __ft_get_arg__(av[2]);
@@ -74,6 +87,9 @@ void	ft_parsing(int ac, char **av, t_global *ph)
 	ph->time_to_sleep = __ft_get_arg__(av[4]);
 	if (ac == 6)
 		ph->times_must_eat = __ft_get_arg__(av[5]);
-	// if (__ft_check_arg__(ph) == ERROR)
-	// 	ft_exit("1", NULL, ERROR, ph);
+	if (__ft_check_arg__(ph) == ERROR)
+	{
+		free(ph);
+		exit(1);
+	}
 }

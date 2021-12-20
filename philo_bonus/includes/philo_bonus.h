@@ -31,6 +31,20 @@
 
 void	ft_parsing(int ac, char **av, t_global *ph);
 
-void	ft_exit(char *arg, char *text, int r_val, t_global *ph);
+void	*alloc(t_global *ph);
+void	quit(t_global *ph);
+size_t	__get_time__(void);
+void	__status__(int id, int status, t_global *ph);
+int		__still_alive__(t_philo	*philo, t_global *ph);
+void	__usleep__(size_t	time);
+void	close_pid(t_global *ph);
+void	close_semaphore(t_global *ph);
+void	unlink_semaphore(void);
+void	open_semaphore(t_global *ph);
+void	ft_is_eating(t_philo *philo, t_global *ph);
+void	ft_is_sleeping(t_philo *philo, t_global *ph);
+void	ft_take_forks(t_philo *philo, t_global *ph);
+void	ft_drop_forks(t_global *ph);
+void	ft_start_meal(t_global *ph);
 
 # endif

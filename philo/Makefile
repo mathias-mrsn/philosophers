@@ -6,7 +6,7 @@
 #    By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/14 17:17:00 by mamaurai          #+#    #+#              #
-#    Updated: 2021/12/18 19:08:04 by mamaurai         ###   ########.fr        #
+#    Updated: 2021/12/20 09:54:59 by mamaurai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,21 +41,22 @@ _CYAN=$'\x1b[36m
 _WHITE=$'\x1b[37m
 
 .c.o:
-			@echo "Compiling ${_YELLOW}${_BOLD}$<${_END}..."
+			@printf "%-15s ${_YELLOW}${_BOLD}$<${_END}...\n" "Compiling"
 			@${CC} ${CFLAGS} ${INCS} -c $< -o $@
 
 all:		${NAME}
 
 ${NAME}:	${OBJS}
-			@echo "Compiling ${_GREEN}${_BOLD}philo${_END}..."
+			@printf "%-15s ${_GREEN}${_BOLD}${NAME}${_END}...\n" "Compiling"
 			@${CC} ${CFLAGS} ${INCS} -lpthread ${OBJS} -o ${NAME}
+			@printf "\n${_GREEN}${_BOLD}Compilation done !${_END}\n"
 
 clean:
-			@echo "Deleting ${_RED}${_BOLD}binary files${_END}..."
+			@printf "%-15s ${_RED}${_BOLD}binary files${_END}...\n" "Deleting"
 			@${RM} ${OBJS}
 
 fclean:		clean
-			@echo "Deleting ${_RED}${_BOLD}philo${_END}..."
+			@printf "%-15s ${_RED}${_BOLD}${NAME}${_END}...\n" "Deleting"
 			@${RM} ${NAME}
 
 re:			fclean all

@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:15:48 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 18:16:38 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/21 22:06:08 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int
 	sem_unlink("talk");
 	sem_unlink("lock");
 	sem_unlink("stop");
+	sem_unlink("sem_done");
 	return (0);
 }
 

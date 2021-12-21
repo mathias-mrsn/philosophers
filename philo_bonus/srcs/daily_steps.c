@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:44:46 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 18:22:08 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/21 23:38:10 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ void
 	philo->last_meal = __get_time__();
 	philo->eaten_count++;
 	if (philo->eaten_count == ph->times_must_eat)
+	{
 		philo->state = 2;
+		sem_post(ph->sem_done);
+	}
 	sem_post(ph->lock);
 	__usleep__(ph->time_to_eat, ph);
 }
@@ -57,4 +60,5 @@ void
 {
 	__status__(ph->stop_value, 1, ph);
 	__usleep__(ph->time_to_die + 100, ph);
+	sem_post(ph->sem_done);
 }

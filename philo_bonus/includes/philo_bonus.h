@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:17:43 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 18:21:44 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/21 23:47:06 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,12 @@ void	ft_take_forks(t_philo *philo, t_global *ph);
 void	ft_drop_forks(t_global *ph);
 void	ft_start_meal(t_global *ph);
 void	__is_alone__(t_global *ph);
+
+/*
+	FORKS
+*/
+
+void	start_philo(t_global *ph);
+void	*everyone_full(void *content);
 
 #endif

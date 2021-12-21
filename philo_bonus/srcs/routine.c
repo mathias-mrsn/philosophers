@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:44:53 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 18:23:32 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/21 23:46:03 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ static void
 	while (0 == ph->stop_value)
 	{
 		usleep(100);
-		if (ph->philosophers[i].state != 2
-			&& ERROR == __still_alive__(&ph->philosophers[ph->id_stock], ph))
+		if (ERROR == __still_alive__(&ph->philosophers[ph->id_stock], ph))
 		{	
 			if (!ph->stop_value)
 				__status__(ph->id_stock, 0, ph);
@@ -64,23 +63,23 @@ static void
 		__usleep__(ph->time_to_eat, ph);
 	if (1 == ph->philo_nbr)
 		return (__is_alone__(ph), NULL);
-	while (!ph->stop_value && (-1 == ph->times_must_eat
-			|| ph->philosophers[id].eaten_count < ph->times_must_eat))
+	while (!ph->stop_value)
 	{
 		ft_take_forks(&ph->philosophers[id], ph);
 		ft_is_eating(&ph->philosophers[id], ph);
 		ft_drop_forks(ph);
 		ft_is_sleeping(&ph->philosophers[id], ph);
-		if (!ph->stop_value)
-			__status__(ph->philosophers[id].id, 4, ph);
+		__status__(ph->philosophers[id].id, 4, ph);
 		__usleep__((size_t)(ph->time_to_eat - ph->time_to_sleep), ph);
 	}
+	if (ph->philosophers[id].state != 2)
+		sem_post(ph->sem_done);
 	pthread_join(death_monitor, NULL);
 	pthread_join(monitor, NULL);
 	return (NULL);
 }
 
-static void
+void
 	start_philo(t_global *ph)
 {
 	uint32_t	index;
@@ -107,21 +106,18 @@ static void
 }
 
 void
-	ft_start_meal(t_global *ph)
+	*everyone_full(void *content)
 {
-	uint32_t	index;
-	uint32_t	id;
+	t_global	*ph;
+	uint32_t	i;
 
-	index = 0;
-	id = 0;
-	sem_wait(ph->stop);
-	ph->start_time = __get_time__();
-	start_philo(ph);
-	index = 0;
-	while (index < ph->philo_nbr)
+	i = 0;
+	ph = ((t_global *)content);
+	while (i < ph->philo_nbr)
 	{
-		waitpid(-1, NULL, 0);
-		index++;
+		sem_wait(ph->sem_done);
+		i++;
 	}
-	ft_exit("01234", NULL, 0, ph);
+	sem_post(ph->stop);
+	return (NULL);
 }

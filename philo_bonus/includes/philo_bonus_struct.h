@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:17:40 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 18:17:41 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/21 22:05:48 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_global
 	int				stop_value;
 	struct s_philo	*philosophers;
 	sem_t			*forks;
+	sem_t			*sem_done;
 	sem_t			*talk;
 	int				stop_talking;
 	sem_t			*lock;

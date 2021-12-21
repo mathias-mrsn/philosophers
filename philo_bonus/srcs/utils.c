@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:44:57 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 18:17:21 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/21 22:10:52 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void
 	{
 		if (status == 0)
 			printf("[%8lu] %d \x1B[31m%s\x1B[0m\n",
-				(__get_time__() - ph->start_time), id, stat[status]);
+				(__get_time__() - ph->start_time), id + 1, stat[status]);
 		else
 			printf("[%8lu] %d %s\n",
-				(__get_time__() - ph->start_time), id, stat[status]);
+				(__get_time__() - ph->start_time), id + 1, stat[status]);
 		if (status == 0)
 		{
 			sem_post(ph->stop);

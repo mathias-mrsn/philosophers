@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:44:55 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 18:17:06 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/21 23:37:30 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int
 	sem_close(ph->lock);
 	sem_close(ph->talk);
 	sem_close(ph->stop);
+	sem_close(ph->sem_done);
 	return (1);
 }
 
@@ -53,6 +54,9 @@ void
 		failure = 1;
 	ph->stop = sem_open("stop", O_CREAT, 0644, 1);
 	if (SEM_FAILED == ph->stop)
+		failure = 1;
+	ph->sem_done = sem_open("sem_done", O_CREAT, 0644, 0);
+	if (SEM_FAILED == ph->sem_done)
 		failure = 1;
 	if (failure)
 		ft_exit("12345", NULL, 1, ph);

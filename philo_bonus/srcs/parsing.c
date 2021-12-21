@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:44:50 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/20 09:44:51 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/21 18:13:32 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ void	ft_parsing(int ac, char **av, t_global *ph)
 	if (ac != 6 && ac != 5)
 	{
 		__print_err__();
-		free(ph);
-		exit(1);
+		ft_exit("4", NULL, 0, ph);
 	}
 	ph->philo_nbr = __ft_get_arg__(av[1]);
 	ph->time_to_die = __ft_get_arg__(av[2]);
@@ -88,8 +87,5 @@ void	ft_parsing(int ac, char **av, t_global *ph)
 	if (ac == 6)
 		ph->times_must_eat = __ft_get_arg__(av[5]);
 	if (__ft_check_arg__(ph) == ERROR)
-	{
-		free(ph);
-		exit(1);
-	}
+		ft_exit("4", NULL, 0, ph);
 }

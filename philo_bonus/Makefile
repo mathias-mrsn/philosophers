@@ -6,7 +6,8 @@ SRCS = 		srcs/main.c \
 			srcs/utils.c \
 			srcs/sem_utils.c \
 			srcs/daily_steps.c \
-			srcs/routine.c
+			srcs/routine.c \
+			srcs/exit.c
 
 
 OBJS = ${SRCS:.c=.o}

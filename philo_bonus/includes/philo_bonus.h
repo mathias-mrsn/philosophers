@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:17:43 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 23:47:06 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/22 14:55:00 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@
 
 # define INVALID (-1)
 
-# include <stdint.h>
-# include <string.h>
 # include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h> 
-# include <signal.h>
 # include <sys/time.h>
 # include <sys/wait.h>
-# include <semaphore.h>
-# include <pthread.h>
+# include <sys/types.h>
+# include <unistd.h>
 # include <limits.h>
+# include <stdlib.h>
+# include <pthread.h>
+# include <semaphore.h>
+# include <fcntl.h>
+# include <string.h>
+# include <signal.h>
 # include "philo_bonus_struct.h"
 
 /*

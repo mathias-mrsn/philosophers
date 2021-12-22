@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:44:43 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 23:45:24 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/22 14:41:52 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void
 	if (ph->times_must_eat != 0)
 	{
 		start_philo(ph);
-		pthread_create(&full_monitor, NULL, &everyone_full, ph);
+		if (pthread_create(&full_monitor, NULL, &everyone_full, ph) != 0)
+			return ;
 		pthread_join(full_monitor, NULL);
 	}
 	index = 0;

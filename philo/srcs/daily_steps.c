@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:47 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/23 08:51:14 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/23 09:23:18 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void
 	pthread_mutex_lock(&philo->lock_philo);
 	philo->last_meal = __get_time__();
 	philo->eaten_count++;
+	pthread_mutex_unlock(&philo->lock_philo);
+	__usleep__(ph->time_to_eat, ph);
 	if (philo->eaten_count == ph->times_must_eat)
 	{
 		philo->state = 2;
 		ph->philo_done++;
 	}
-	pthread_mutex_unlock(&philo->lock_philo);
-	__usleep__(ph->time_to_eat, ph);
 }
 
 void

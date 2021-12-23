@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 18:17:43 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/22 14:55:00 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/23 09:07:14 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define INVALID (-1)
 
 # include <stdio.h>
+# include <stdint.h>
 # include <sys/time.h>
 # include <sys/wait.h>
 # include <sys/types.h>

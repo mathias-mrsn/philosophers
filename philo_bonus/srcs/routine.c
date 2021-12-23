@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 09:44:53 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 23:46:03 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/23 09:25:11 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ static void
 		ft_is_eating(&ph->philosophers[id], ph);
 		ft_drop_forks(ph);
 		ft_is_sleeping(&ph->philosophers[id], ph);
-		__status__(ph->philosophers[id].id, 4, ph);
-		__usleep__((size_t)(ph->time_to_eat - ph->time_to_sleep), ph);
+		if (ph->stop_value != 1)
+			__status__(ph->philosophers[id].id, 4, ph);
 	}
 	if (ph->philosophers[id].state != 2)
 		sem_post(ph->sem_done);

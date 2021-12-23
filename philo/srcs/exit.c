@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "philo.h"
 
 static int
 	__free_struct__(t_global *ph)
@@ -40,11 +40,6 @@ static int
 static int
 	__free_phi__(t_global *ph)
 {
-	uint32_t	i;
-
-	i = 0;
-	while(i < ph->philo_nbr)
-		free(&ph->philosophers[i++]);
 	free(ph->philosophers);
 	return (0);
 }
@@ -58,8 +53,6 @@ void
 	i = 0;
 	if (text)
 		printf("Error : %s\n", text);
-	if (arg)
-		exit(end);
 	while (arg[i])
 	{
 		(f[arg[i] - 48])(ph);

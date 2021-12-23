@@ -48,7 +48,7 @@ all:		${NAME}
 
 ${NAME}:	${OBJS}
 			@printf "%-15s ${_GREEN}${_BOLD}${NAME}${_END}...\n" "Compiling"
-			@${CC} ${CFLAGS} ${INCS} -lpthread ${OBJS} -o ${NAME}
+			@${CC} ${CFLAGS} -g3 ${INCS} -lpthread ${OBJS} -o ${NAME}
 			@printf "\n${_GREEN}${_BOLD}Compilation done !${_END}\n"
 
 clean:

@@ -10,7 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "philo.h"
+
+static void
+	ft_is_alone(t_global *ph, int id)
+{
+	__status__(id, 1, ph);
+	__usleep__(ph->time_to_die + 100, ph);
+}
 
 static void
 	*ft_philosopher_is_born(void	*content)
@@ -25,6 +32,8 @@ static void
 	pthread_mutex_unlock(&ph->lock);
 	if (0 == (id % 2) && ph->philo_nbr > 1)
 		__usleep__(ph->time_to_eat, ph);
+	if (1 == ph->philo_nbr)
+		ft_is_alone(ph, id);
 	while (!ph->stop && (-1 == ph->times_must_eat
 			|| ph->philosophers[id].eaten_count < ph->times_must_eat))
 	{
@@ -64,8 +73,8 @@ static void
 	}
 }
 
-void
-	ft_lets_go_eat(t_global	*ph)
+static void
+	__init_mutex__(t_global *ph)
 {
 	uint32_t	i;
 
@@ -78,7 +87,15 @@ void
 	}
 	pthread_mutex_init(&ph->talk, NULL);
 	pthread_mutex_init(&ph->lock, NULL);
+}
+
+void
+	ft_lets_go_eat(t_global	*ph)
+{
+	uint32_t	i;
+
 	i = 0;
+	__init_mutex__(ph);
 	pthread_mutex_lock(&ph->lock);
 	while (i < ph->philo_nbr)
 	{
@@ -92,4 +109,5 @@ void
 	i = 0;
 	while (i < ph->philo_nbr)
 		pthread_join(ph->philosophers[i++].philo, NULL);
+	pthread_join(ph->death, NULL);
 }

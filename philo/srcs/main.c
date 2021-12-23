@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "philo.h"
 
 void
 	__ft_alloc__(t_global	*ph)
@@ -46,6 +46,6 @@ int
 	ft_parsing(ac, av, s);
 	__ft_alloc__(s);
 	ft_lets_go_eat(s);
-	ft_exit("123", NULL, SUCCESS, s);
+	ft_exit("012", NULL, SUCCESS, s);
 	return (0);
 }

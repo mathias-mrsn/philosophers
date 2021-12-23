@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "philo.h"
 
 size_t
 	__get_time__(void)
@@ -25,13 +25,18 @@ void
 	__status__(int id, int status, t_global *ph)
 {
 	const char	*stat[5] = {DEAD, FORK, EAT, SLEEP, THINK};
-	const char	*colors[5] = {"\x1B[31m", "\x1B[33m",
-		"\x1B[32m", "\x1B[36m", "\x1B[35m"};
 
 	pthread_mutex_lock(&ph->talk);
 	if (ph->stop_talking == 0)
-		printf("[%8lu] %d %s%s\033[0m\n",
-		(__get_time__() - ph->start_time), id, colors[status], stat[status]);
+	{
+		if (status != 0)
+			printf("[%8lu] %d %s\n",
+				(__get_time__() - ph->start_time), id + 1, stat[status]);
+		else
+			printf("[%8lu] %d %s%s\033[0m\n",
+				(__get_time__() - ph->start_time),
+				id + 1, "\x1B[31m", stat[status]);
+	}
 	if (status == 0)
 		ph->stop_talking = 1;
 	pthread_mutex_unlock(&ph->talk);

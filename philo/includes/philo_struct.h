@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers_struct.h                              :+:      :+:    :+:   */
+/*   philo_struct.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 17:16:44 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/20 22:01:46 by mamaurai         ###   ########.fr       */
+/*   Created: 2021/12/21 11:28:32 by mamaurai          #+#    #+#             */
+/*   Updated: 2021/12/21 11:28:35 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILOSOPHERS_STRUCT_H
-# define PHILOSOPHERS_STRUCT_H
+#ifndef PHILO_STRUCT_H
+# define PHILO_STRUCT_H
 
 typedef struct s_philo
 {

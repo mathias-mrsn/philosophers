@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.h                                     :+:      :+:    :+:   */
+/*   philo.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHILOSOPHERS_H
-# define PHILOSOPHERS_H
+#ifndef PHILO_H
+# define PHILO_H
 
 # define INT32MAX_SIZE 11
 
@@ -26,6 +26,7 @@
 # define DEAD "died"
 
 # include <string.h>
+# include <stdint.h>
 # include <limits.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -33,7 +34,7 @@
 # include <stdbool.h>
 # include <sys/time.h>
 # include <pthread.h>
-# include "philosophers_struct.h"
+# include "philo_struct.h"
 
 /*
 	DAILY STEPS

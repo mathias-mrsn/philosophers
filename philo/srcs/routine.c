@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 17:16:54 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/20 22:03:27 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/23 08:54:15 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static void
 	pthread_mutex_unlock(&ph->lock);
 	if (0 == (id % 2) && ph->philo_nbr > 1)
 		__usleep__(ph->time_to_eat, ph);
-	if (1 == ph->philo_nbr)
-		ft_is_alone(ph, id);
+	if (1 == ph->philo_nbr && ph->times_must_eat != 0)
+		return (ft_is_alone(ph, id), NULL);
 	while (!ph->stop && (-1 == ph->times_must_eat
 			|| ph->philosophers[id].eaten_count < ph->times_must_eat))
 	{
@@ -41,8 +41,8 @@ static void
 		ft_is_eating(&ph->philosophers[id], ph);
 		ft_drop_forks(&ph->philosophers[id], ph);
 		ft_is_sleeping(&ph->philosophers[id], ph);
-		__status__(ph->philosophers[id].id, 4, ph);
-		__usleep__((size_t)(ph->time_to_eat - ph->time_to_sleep), ph);
+		if (ph->philosophers[id].state != 2)
+			__status__(ph->philosophers[id].id, 4, ph);
 	}
 	return (NULL);
 }
@@ -52,21 +52,23 @@ static void
 {
 	t_global	*ph;
 	uint32_t	i;
-	int			test;
 
 	i = 0;
 	ph = ((t_global *)content);
 	while (1)
 	{
+		if (ph->philo_done == ph->philo_nbr)
+			return (NULL);
 		usleep(100);
 		pthread_mutex_lock(&ph->philosophers[i].lock_philo);
-		test = __still_alive__(&ph->philosophers[i], ph);
-		pthread_mutex_unlock(&ph->philosophers[i].lock_philo);
-		if (ph->philosophers[i].state != 2 && ERROR == test)
+		if (ph->philosophers[i].state != 2
+			&& ERROR == __still_alive__(&ph->philosophers[i], ph))
 		{
 			ph->stop = 1;
+			pthread_mutex_unlock(&ph->philosophers[i].lock_philo);
 			return (NULL);
 		}
+		pthread_mutex_unlock(&ph->philosophers[i].lock_philo);
 		i++;
 		if (i == ph->philo_nbr)
 			i = 0;
@@ -96,6 +98,8 @@ void
 
 	i = 0;
 	__init_mutex__(ph);
+	if (ph->times_must_eat == 0)
+		return ;
 	pthread_mutex_lock(&ph->lock);
 	while (i < ph->philo_nbr)
 	{

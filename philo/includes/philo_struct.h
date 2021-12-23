@@ -6,7 +6,7 @@
 /*   By: mamaurai <mamaurai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:28:32 by mamaurai          #+#    #+#             */
-/*   Updated: 2021/12/21 11:28:35 by mamaurai         ###   ########.fr       */
+/*   Updated: 2021/12/23 08:49:16 by mamaurai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_global
 	int64_t			times_must_eat;
 	uint32_t		set_id;
 	size_t			start_time;
+	uint32_t		philo_done;
 	int				stop;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	lock;
